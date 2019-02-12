@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:HMI_PermanentForm">
+    
+    <sys:String x:Key="_A">
+        製程設定
+    </sys:String>
+    
+    <sys:String x:Key="_B">
+        載圖介面
+    </sys:String>
+    
+    <sys:String x:Key="_C">
+        系統設定
+    </sys:String>
+    
+    <sys:String x:Key="_D">
+        歷史紀錄
+    </sys:String>
+    
+    <sys:String x:Key="_E">
+        首 頁 
+    </sys:String>
+    
+    <sys:String x:Key="_F">
+        關閉程式
+    </sys:String>
+       
+    
+</ResourceDictionary>

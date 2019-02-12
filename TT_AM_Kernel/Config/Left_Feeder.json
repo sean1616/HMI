@@ -1,0 +1,46 @@
+{
+  "paraHardware": {
+    "PulseOut": 5,
+    "PulseIn": 3,
+    "Limit_Logic": 1,
+    "Limit_StopAction": 1,
+    "INP_Enable": 0,
+    "INP_Logic": 0,
+    "Alarm_Enable": 0,
+    "Alarm_Logic": 0
+  },
+  "paraMotion": {
+    "FT_MaxVal": 4000000,
+    "FT_MaxAcc": 500000000,
+    "FT_MaxDec": 500000000,
+    "TSCurve": 1,
+    "Speed_Jog": 1500,
+	"BackOff_Dis": 1000,
+    "CFG_PPU": 1,
+    "CFG_MaxVal": 8000,
+    "CFG_MaxAcc": 1000000,
+    "CFG_MaxDec": 1000000,
+	"Speed_Driving": 1500,
+    "Speed_Initial": 1000,
+    "Acc": 10000,
+    "Dec": 10000
+  },
+  "paraHome": {
+    "HomeMode": 7,
+    "HomeResetEnable": 1,
+    "HomeShift": 100,
+    "HomeDir": 2,
+	"HomeSpeed": 1500
+  },
+  "paraPhysical": {
+    "Pitch": 2,
+    "Resolution": 500,
+    "GearRatio": 1,
+    "Gain": 0.00016
+  },
+  "paramLimitPos":
+  {
+    "P_LimitPos": 80000,
+    "N_LimitPos": -10000
+  }
+}

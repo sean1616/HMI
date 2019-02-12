@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI_PermanentForm.Properties">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Pages/Dict_Process_Page.xaml"/>
+        <ResourceDictionary Source="Pages/Dict_Home_Page.xaml"/>
+        <ResourceDictionary Source="Pages/Dict_Loading_Page.xaml"/>
+        <ResourceDictionary Source="Pages/Dict_System_Page.xaml"/>
+        <ResourceDictionary Source="Pages/Dict_History_Page.xaml"/>        
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

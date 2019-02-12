@@ -1,0 +1,178 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI_PermanentForm">
+
+    <Style x:Key="B1_2_01_radiobtn" TargetType="{x:Type RadioButton}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="ClickMode" Value="Press"/>
+        <Setter Property="IsChecked" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid SnapsToDevicePixels="true">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="0.35*"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.RowSpan="2" Name="ImageName" Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ContentPresenter Grid.Row="1" x:Name="contentPresenter" Focusable="False" VerticalAlignment="Top" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="ImageName" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/B1_2_01_normal.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="ImageName" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/B1_2_01_pressed.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="ImageName" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/B1_2_01_pressed.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="B1_2_02_radiobtn" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource B1_2_01_radiobtn}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid SnapsToDevicePixels="true">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="0.35*"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.RowSpan="2" Name="ImageName" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ContentPresenter Grid.Row="1" x:Name="contentPresenter" Focusable="False" VerticalAlignment="Top" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="ImageName" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/B1_2_02_normal.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="ImageName" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/B1_2_02_pressed.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="ImageName" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/B1_2_02_pressed.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="B1_2_03_radiobtn" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource B1_2_01_radiobtn}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid SnapsToDevicePixels="true">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="0.35*"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.RowSpan="2" Name="ImageName" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ContentPresenter Grid.Row="1" x:Name="contentPresenter" Focusable="False" VerticalAlignment="Top" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="ImageName" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/B1_2_03_normal.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="ImageName" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/B1_2_03_pressed.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="ImageName" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/B1_2_03_pressed.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="B1_2_04_radiobtn" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource B1_2_01_radiobtn}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid SnapsToDevicePixels="true">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="0.35*"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.RowSpan="2" Name="ImageName" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ContentPresenter Grid.Row="1" x:Name="contentPresenter" Focusable="False" VerticalAlignment="Top" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="ImageName" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/B1_2_04_normal.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="ImageName" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/B1_2_04_pressed.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="ImageName" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/B1_2_04_pressed.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+</ResourceDictionary>

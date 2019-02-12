@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!-- 中文介面 -->
+
+    <!-- A6_1 區 中文介面 -->
+    <sys:String x:Key="A6_1_01">
+        真空狀態
+    </sys:String>
+
+    <sys:String x:Key="A6_1_02">
+        預設值
+    </sys:String>
+
+    <sys:String x:Key="A6_1_03_Unit">
+        torr
+    </sys:String>
+
+    <sys:String x:Key="A6_1_04">
+        目標值
+    </sys:String>
+
+    <sys:String x:Key="A6_1_07">
+        torr
+    </sys:String>
+
+    <sys:String x:Key="A6_1_08">
+        惰性氣體
+    </sys:String>
+
+    <sys:String x:Key="A6_1_14_Unit">
+        ppm
+    </sys:String>
+
+    <sys:String x:Key="A6_1_15">
+        氣體流量
+    </sys:String>
+
+    <sys:String x:Key="A6_1_16">
+        段數
+    </sys:String>
+
+</ResourceDictionary>

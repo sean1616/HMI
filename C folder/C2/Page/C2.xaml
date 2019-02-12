@@ -1,0 +1,1143 @@
+﻿<Page x:Class="HMI_PermanentForm.C2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HMI_PermanentForm"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="800"
+      Title="C2" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO00].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO00].IsOn}"  Checked="DO00_Checked" Unchecked="DO00_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO00].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO01].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton IsChecked="{Binding Path=IOCollection[DO01].IsOn}" Style="{DynamicResource DO_btn}"  Checked="DO01_Checked" Unchecked="DO01_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO01].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO02].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton IsChecked="{Binding Path=IOCollection[DO02].IsOn}" Style="{DynamicResource DO_btn}"  Checked="DO02_Checked" Unchecked="DO02_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO02].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO03].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO03].IsOn}"  Checked="DO03_Checked" Unchecked="DO03_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO03].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="4" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO04].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO04].IsOn}"  Checked="DO04_Checked" Unchecked="DO04_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO04].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO05].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO05].IsOn}"  Checked="DO05_Checked" Unchecked="DO05_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO05].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO06].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO06].IsOn}"  Checked="DO06_Checked" Unchecked="DO06_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO06].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO07].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO07].IsOn}"  Checked="DO07_Checked" Unchecked="DO07_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO07].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO08].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO08].IsOn}"  Checked="DO08_Checked" Unchecked="DO08_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO08].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="9" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO09].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO09].IsOn}"  Checked="DO09_Checked" Unchecked="DO09_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO09].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO10].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0">
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO10].IsOn}"  Checked="DO10_Checked" Unchecked="DO10_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO10].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO11].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO11].IsOn}"  Checked="DO11_Checked" Unchecked="DO11_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO11].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO12].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO12].IsOn}"  Checked="DO12_Checked" Unchecked="DO12_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO12].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="13">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO13].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO13].IsOn}"  Checked="DO13_Checked" Unchecked="DO13_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO13].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="14" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO14].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO14].IsOn}"  Checked="DO14_Checked" Unchecked="DO14_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO14].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO15].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO15].IsOn}"  Checked="DO15_Checked" Unchecked="DO15_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO15].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO16].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO16].IsOn}"  Checked="DO16_Checked" Unchecked="DO16_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO16].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="17">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO17].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO17].IsOn}"  Checked="DO17_Checked" Unchecked="DO17_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO17].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="18">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO18].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO18].IsOn}" Checked="DO18_Checked" Unchecked="DO18_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO18].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="19" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO19].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO19].IsOn}" Checked="DO19_Checked" Unchecked="DO19_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO19].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Column="3" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO20].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO20].IsOn}"  Checked="DO20_Checked" Unchecked="DO20_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO20].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO21].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO21].IsOn}" Checked="DO21_Checked" Unchecked="DO21_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO21].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO22].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO22].IsOn}" Checked="DO22_Checked" Unchecked="DO22_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO22].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO23].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO23].IsOn}" Checked="DO23_Checked" Unchecked="DO23_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO23].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="4" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO24].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO24].IsOn}" Checked="DO24_Checked" Unchecked="DO24_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO24].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO25].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO25].IsOn}"  Checked="DO25_Checked" Unchecked="DO25_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO25].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO26].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO26].IsOn}" Checked="DO26_Checked" Unchecked="DO26_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO26].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO27].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO27].IsOn}" Checked="DO27_Checked" Unchecked="DO27_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO27].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO28].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO28].IsOn}" Checked="DO28_Checked" Unchecked="DO28_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO28].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="9" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO29].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO29].IsOn}" Checked="DO29_Checked" Unchecked="DO29_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO29].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO30].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO30].IsOn}" Checked="DO30_Checked" Unchecked="DO30_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO30].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO31].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO31].IsOn}" Checked="DO31_Checked" Unchecked="DO31_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO31].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO32].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO32].IsOn}" Checked="DO32_Checked" Unchecked="DO32_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO32].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="13">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO33].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO33].IsOn}" Checked="DO33_Checked" Unchecked="DO33_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO33].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="14" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO34].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO34].IsOn}" Checked="DO34_Checked" Unchecked="DO34_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO34].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO35].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO35].IsOn}" Checked="DO35_Checked" Unchecked="DO35_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO35].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO36].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO36].IsOn}" Checked="DO36_Checked" Unchecked="DO36_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO36].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="17">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO37].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO37].IsOn}" Checked="DO37_Checked" Unchecked="DO37_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO37].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="18">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO38].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO38].IsOn}" Checked="DO38_Checked" Unchecked="DO38_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO38].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="19" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO39].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO39].IsOn}" Checked="DO39_Checked" Unchecked="DO39_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO39].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Column="5" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO40].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO40].IsOn}" Checked="DO40_Checked" Unchecked="DO40_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO40].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO41].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO41].IsOn}" Checked="DO41_Checked" Unchecked="DO41_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO41].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO42].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO42].IsOn}" Checked="DO42_Checked" Unchecked="DO42_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO42].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO43].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO43].IsOn}" Checked="DO43_Checked" Unchecked="DO43_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO43].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="4" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO44].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO44].IsOn}" Checked="DO44_Checked" Unchecked="DO44_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO44].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO45].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO45].IsOn}" Checked="DO45_Checked" Unchecked="DO45_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO45].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO46].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO46].IsOn}" Checked="DO46_Checked" Unchecked="DO46_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO46].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO47].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO47].IsOn}" Checked="DO47_Checked" Unchecked="DO47_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO47].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO48].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO48].IsOn}" Checked="DO48_Checked" Unchecked="DO48_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO48].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="9" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO49].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO49].IsOn}" Checked="DO49_Checked" Unchecked="DO49_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO49].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO50].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO50].IsOn}" Checked="DO50_Checked" Unchecked="DO50_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO50].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO51].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO51].IsOn}" Checked="DO51_Checked" Unchecked="DO51_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO51].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO52].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO52].IsOn}" Checked="DO52_Checked" Unchecked="DO52_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO52].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="13">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO53].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO53].IsOn}" Checked="DO53_Checked" Unchecked="DO53_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO53].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="14" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO54].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO54].IsOn}" Checked="DO54_Checked" Unchecked="DO54_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO54].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO55].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO55].IsOn}" Checked="DO55_Checked" Unchecked="DO55_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO55].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO56].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO56].IsOn}" Checked="DO56_Checked" Unchecked="DO56_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO56].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="17">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO57].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO57].IsOn}" Checked="DO57_Checked" Unchecked="DO57_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO57].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="18">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO58].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO58].IsOn}" Checked="DO58_Checked" Unchecked="DO58_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO58].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="19" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO59].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO59].IsOn}" Checked="DO59_Checked" Unchecked="DO59_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO59].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+
+        </Grid>
+
+        <Grid Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO60].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO60].IsOn}"  Checked="DO60_Checked" Unchecked="DO60_Unchecked"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO60].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO61].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO61].IsOn}" Checked="DO61_Checked" Unchecked="DO61_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO61].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO62].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO62].IsOn}" Checked="DO62_Checked" Unchecked="DO62_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO62].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DO63].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DO_btn}" IsChecked="{Binding Path=IOCollection[DO63].IsOn}" Checked="DO63_Checked" Unchecked="DO63_Unchecked"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DO63].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

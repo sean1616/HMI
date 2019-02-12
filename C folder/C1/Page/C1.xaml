@@ -1,0 +1,1142 @@
+﻿<Page x:Class="HMI_PermanentForm.C1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HMI_PermanentForm"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="800"
+      Title="C1" Unloaded="Page_Unloaded" Loaded="Page_Loaded">
+   
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI00].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI00].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI00].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI01].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI01].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI01].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI02].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI02].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI02].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI03].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI03].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI03].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="4" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI04].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI04].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI04].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI05].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI05].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI05].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI06].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI06].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI06].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI07].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI07].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI07].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI08].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI08].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI08].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="9" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI09].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI09].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI09].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI10].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0">
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI10].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI10].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI11].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI11].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI11].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI12].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI12].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI12].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="13">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI13].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI13].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI13].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="14" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI14].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI14].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI14].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI15].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI15].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI15].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI16].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI16].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI16].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="17">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI17].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI17].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI17].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="18">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI18].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI18].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI18].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="19" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI19].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI19].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI19].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Column="3" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI20].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI20].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI20].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI21].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI21].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI21].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI22].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI22].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI22].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI23].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI23].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI23].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="4" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI24].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI24].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI24].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI25].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI25].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI25].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI26].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI26].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI26].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI27].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI27].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI27].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI28].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI28].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI28].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="9" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI29].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI29].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI29].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI30].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI30].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI30].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI31].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI31].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI31].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI32].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI32].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI32].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="13">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI33].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI33].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI33].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="14" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI34].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI34].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI34].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI35].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI35].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI35].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI36].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI36].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI36].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="17">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI37].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI37].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI37].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="18">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI38].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI38].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI38].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="19" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI39].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI39].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI39].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Column="5" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI40].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI40].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI40].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI41].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI41].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI41].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI42].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI42].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI42].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI43].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI43].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI43].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="4" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI44].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI44].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI44].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI45].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI45].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI45].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI46].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI46].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI46].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI47].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI47].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI47].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI48].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI48].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI48].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="9" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI49].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI49].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI49].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI50].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI50].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI50].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI51].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI51].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI51].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI52].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI52].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI52].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="13">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI53].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI53].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI53].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="14" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI54].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI54].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI54].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI55].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI55].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI55].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI56].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI56].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI56].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="17">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI57].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI57].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI57].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="18">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI58].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI58].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI58].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="19" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI59].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI59].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI59].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI60].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI60].IsOn}"/>
+                </Grid>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI60].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI61].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI61].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI61].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI62].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI62].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI62].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Border>
+                    <Label Grid.Column="0" Content="{Binding Path=IOCollection[DI63].Index}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <Border Grid.Column="1" Background="#2a292c" Margin="2.2,0" >
+                    <ToggleButton Style="{DynamicResource DI_btn}" IsChecked="{Binding Path=IOCollection[DI63].IsOn}"/>
+                </Border>
+                <Label Grid.Column="2" Content="{Binding Path=IOCollection[DI63].Description}" Background="#2a292c" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <GridSplitter Grid.Column="0" Grid.ColumnSpan="3" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

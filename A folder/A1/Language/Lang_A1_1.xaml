@@ -1,0 +1,57 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="A1_1_01">
+        吋動量
+    </sys:String>
+
+    <sys:String x:Key="A1_1_02">
+        mm
+    </sys:String>
+
+    <sys:String x:Key="A1_1_03">
+        紅光對位
+    </sys:String>
+
+    <sys:String x:Key="A1_1_04">
+        回歸原點
+    </sys:String>
+
+    <sys:String x:Key="A1_1_05">
+        原點參考線
+    </sys:String>
+
+    <sys:String x:Key="A1_1_06">
+        X軸-鋪粉軸
+    </sys:String>
+
+    <sys:String x:Key="A1_1_07">
+        mm
+    </sys:String>
+
+    <sys:String x:Key="A1_1_11">
+        Z軸-底版整體
+    </sys:String>
+
+    <sys:String x:Key="A1_1_12">
+        mm
+    </sys:String>
+
+    <sys:String x:Key="A1_1_16">
+        L軸-底板左側
+    </sys:String>
+
+    <sys:String x:Key="A1_1_17">
+        mm
+    </sys:String>
+
+    <sys:String x:Key="A1_1_21">
+        R軸-底板右側
+    </sys:String>
+
+    <sys:String x:Key="A1_1_22">
+        mm
+    </sys:String>
+
+</ResourceDictionary>

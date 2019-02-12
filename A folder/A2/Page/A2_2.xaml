@@ -1,0 +1,51 @@
+﻿<Page x:Class="HMI_PermanentForm.A2_2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HMI_PermanentForm"
+      xmlns:ht="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="A2_2">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ht:HelixViewport3D x:Name="view1" CameraRotationMode="Trackball" ShowCameraInfo="True" ModelUpDirection="0,1,0" Loaded="view1_Loaded" Background="Black" ShowViewCube="False">
+            <ht:HelixViewport3D.DefaultCamera>
+                <PerspectiveCamera Position="0 -216 142" LookDirection="0 54 -33" FieldOfView="100" UpDirection="0 0 1"/>
+            </ht:HelixViewport3D.DefaultCamera>
+            <!--<ht:SunLight/>-->
+            <ht:DefaultLights/>
+            <!--<ht:GridLinesVisual3D Length="260" Width="260"/>-->
+
+            <ht:BindableTranslateManipulator x:Name="translate_X" Direction="1 0 0" Position="0 0 0" 
+                                     Value="{Binding TranslateValue}"
+                                     TargetTransform="{Binding ElementName=blade1, Path=Transform}"/>
+            
+            <ht:BindableRotateManipulator x:Name="rotation" Diameter="0" InnerDiameter="0" Axis="0 1 0"
+                                  Value="{Binding RotateValue}"  
+                                  TargetTransform="{Binding ElementName=blade1, Path=Transform}"/>
+            <ModelVisual3D x:Name="plate1"/>
+            <ModelVisual3D x:Name="blade1"/>
+
+
+        </ht:HelixViewport3D>
+        <StackPanel Grid.Row="1">
+            <StackPanel>
+                <TextBox Text="{Binding TranslateValue}" MinWidth="70" Width="400" HorizontalAlignment="Center"/>
+                <Slider Name="translider" Minimum="-125" Maximum="125" Width="400" HorizontalAlignment="Center" Value="{Binding TranslateValue}"/>                
+            </StackPanel>
+
+            <GroupBox Header="Rotate Value" Visibility="Hidden">
+                <StackPanel>
+                    <TextBox Text="{Binding RotateValue}" MinWidth="70"/>
+                    <Slider Name="rotaslider" Minimum="0" Maximum="360" Value="{Binding RotateValue}"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Page>

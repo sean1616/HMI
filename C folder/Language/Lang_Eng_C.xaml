@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI_PermanentForm"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="_C1">
+        System input status
+    </sys:String>
+
+    <sys:String x:Key="_C2">
+        System output status
+    </sys:String>
+
+    <sys:String x:Key="_C3">
+        ID:Tongtai
+    </sys:String>
+
+    <sys:String x:Key="_C4">
+        Switch User
+    </sys:String>
+    
+    <sys:String x:Key="_C5">
+        Sign in
+    </sys:String>
+
+</ResourceDictionary>

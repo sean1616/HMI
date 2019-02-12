@@ -1,0 +1,192 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HMI_PermanentForm"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"  
+      x:Class="HMI_PermanentForm.A1_1"     
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="100"
+      Title="A1_1">
+    
+    <Border BorderBrush="Black" BorderThickness="1">
+    <Grid Background="#FF211C23">            
+            <Grid.RowDefinitions>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="1" Grid.Column="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="{StaticResource A1_1_01}"  Style="{StaticResource textstyle}"/>
+                <Grid Grid.Row="1">
+                    <xctk:DecimalUpDown Name="DecimalUD_Increment" Value="{Binding Path=Increment,FallbackValue=0.1}" TextAlignment="Center" Style="{StaticResource A1_1_NumericUpDown}" Watermark="{DynamicResource A1_1_02}" KeyDown="DecimalUpDown_KeyDown" Minimum="0" Increment="0.1"/>
+                </Grid>                
+
+                <RadioButton Grid.Row="2" x:Name="A1_1_3" Content="{StaticResource A1_1_03}" Style="{DynamicResource A1_1_03_btn}" Checked="A1_1_3_Checked" Unchecked="A1_1_3_Unchecked" />
+                <RadioButton Grid.Row="3" x:Name="A1_1_4" Content="{StaticResource A1_1_04}" Style="{DynamicResource A1_1_03_btn}"/>
+                <RadioButton Grid.Row="4" x:Name="A1_1_5" Content="{StaticResource A1_1_05}" Style="{DynamicResource A1_1_03_btn}"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+                <Grid x:Name="grid1" Grid.Row="1" Grid.Column="1" Style="{DynamicResource gridcolor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="{StaticResource A1_1_06}" Style="{StaticResource textstyle}"/>
+                    <xctk:DecimalUpDown Name="DecimalUD_AxisX_CommandPos" Grid.Row="1" Value="{Binding Path=X_Abs_Pos,FallbackValue=0.00}" TextAlignment="Center" 
+                                    Style="{StaticResource A1_1_NumericUpDown}" Watermark="{DynamicResource A1_1_02}" KeyDown="DecimalUpDown_KeyDown"/>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Name="AxisX_Check" Grid.Column="0" Style="{StaticResource A1_1_08_1_btn}" Click="AxisX_Check_Click"/>
+                        <Button Name="AxisX_Clear" Grid.Column="1" Style="{StaticResource A1_1_08_2_btn}" Click="AxisX_Clear_Click"/>
+                        <Button Name="AxisX_Home" Grid.Column="2" Style="{StaticResource A1_1_08_3_btn}" Click="AxisX_Home_Click"/>
+                    </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Row="1" Grid.Column="1" Style="{DynamicResource gridcolor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"  Text="{StaticResource A1_1_11}" Style="{StaticResource textstyle}"/>
+                    <xctk:DecimalUpDown  Name="DecimalUD_AxisZ_CommandPos" Grid.Row="1" Value="{Binding Path=Z_Abs_Pos,FallbackValue=0.00}" TextAlignment="Center" Style="{StaticResource A1_1_NumericUpDown}" Watermark="{DynamicResource A1_1_02}" KeyDown="DecimalUpDown_KeyDown"/>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Name="AxisZ_Check" Grid.Column="0" Style="{StaticResource A1_1_08_1_btn}" Click="AxisZ_Check_Click"/>
+                        <Button Name="AxisZ_Clear" Grid.Column="1" Style="{StaticResource A1_1_08_2_btn}" Click="AxisZ_Clear_Click"/>
+                        <Button Name="AxisZ_Home" Grid.Column="2" Style="{StaticResource A1_1_08_3_btn}" Click="AxisZ_Home_Click"/>
+                    </Grid>
+            </Grid>
+        </Grid>
+
+
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Row="1" Grid.Column="1" Style="{DynamicResource gridcolor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"  Text="{StaticResource A1_1_16}" Style="{StaticResource textstyle}"/>
+                    <xctk:DecimalUpDown  Name="DecimalUD_AxisU1_CommandPos" Grid.Row="1" Value="{Binding Path=U1_Abs_Pos,FallbackValue=0.00}" TextAlignment="Center" Style="{StaticResource A1_1_NumericUpDown}" Watermark="{DynamicResource A1_1_02}" KeyDown="DecimalUpDown_KeyDown"/>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Name="AxisU1_Check" Grid.Column="0" Style="{StaticResource A1_1_08_1_btn}" Click="AxisU1_Check_Click"/>
+                        <Button Name="AxisU1_Clear" Grid.Column="1" Style="{StaticResource A1_1_08_2_btn}" Click="AxisU1_Clear_Click"/>
+                        <Button Name="AxisU1_Home" Grid.Column="2" Style="{StaticResource A1_1_08_3_btn}" Click="AxisU1_Home_Click"/>
+                    </Grid>
+                </Grid>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="1" Grid.Column="1" Style="{DynamicResource gridcolor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"  Text="{StaticResource A1_1_21}" Style="{StaticResource textstyle}"/>
+                    <xctk:DecimalUpDown Name="DecimalUD_AxisU2_CommandPos" Grid.Row="1" Value="{Binding Path=U2_Abs_Pos,FallbackValue=0.00}" TextAlignment="Center" Style="{StaticResource A1_1_NumericUpDown}" Watermark="{DynamicResource A1_1_02}" KeyDown="DecimalUpDown_KeyDown"/>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Name="AxisU2_Check" Grid.Column="0" Style="{StaticResource A1_1_08_1_btn}" Click="AxisU2_Check_Click"/>
+                        <Button Name="AxisU2_Clear" Grid.Column="1" Style="{StaticResource A1_1_08_2_btn}" Click="AxisU2_Clear_Click"/>
+                        <Button Name="Axisu2_Home" Grid.Column="2" Style="{StaticResource A1_1_08_3_btn}" Click="Axisu2_Home_Click"/>
+                    </Grid>
+                </Grid>
+        </Grid>
+        
+        
+
+    </Grid>
+    </Border>
+</Page>

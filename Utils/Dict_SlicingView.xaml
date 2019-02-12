@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI_PermanentForm.Utils"
+                    xmlns:cvt ="clr-namespace:HMI_PermanentForm.E_folder.Converter"
+                    xmlns:h="http://helix-toolkit.org/wpf">
+
+        <Style x:Key="Style_ViewPort3D" TargetType="h:HelixViewport3D">
+            <!--設定ViewCube-->
+            <Setter Property="ShowViewCube" Value="True"/>
+            <Setter Property="ShowCoordinateSystem" Value="True"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="CurrentPosition" Value="{Binding CurrentPosition}"/>
+            <Setter Property="EnableCurrentPosition" Value="true"/>
+        <!--<Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="h:HelixViewport3D">
+                    <h:HelixViewport3D x:Name="viewport" Camera="{h:PerspectiveCamera 0.0,-100.0,250.0}" IsRotationEnabled="True" CurrentPosition="{Binding CurrentPosition, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
+                        <utils:GridLines Width="250" Length="250"/>
+
+                        <h:LinesVisual3D x:Name="HatchObj" Points="{Binding Hatch}" Color="Green"></h:LinesVisual3D>
+                    </h:HelixViewport3D>
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>-->
+        </Style>
+
+    <cvt:PercentageConverter x:Key="PercentageConverter"/>
+</ResourceDictionary>

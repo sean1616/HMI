@@ -1,0 +1,84 @@
+﻿<Page x:Class="HMI_PermanentForm.A"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HMI_PermanentForm"
+      mc:Ignorable="d" 
+      xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+      xmlns:A1_1="clr-namespace:HMI_PermanentForm"
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Dict_Process_Page">
+
+    <Grid>            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+        <Frame x:Name="A_GrayBlock" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Panel.ZIndex="0" />
+
+        <!--版面編排1-->
+        <Frame x:Name="Left_State_1" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
+        <Frame Name="view_A1_2" Grid.Row="1" Grid.Column="1"/>
+
+        <!--版面編排2-->
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <Frame x:Name="Left_State_2" Grid.Column="0"/>
+            <Frame x:Name="A5_2" Grid.Column="1"/>
+        </Grid>
+
+        <!--版面編排3-->
+        <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="18*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>            
+            <Frame Grid.RowSpan="3" Name="State_Page" Grid.Row="0"/>            
+        </Grid>
+  
+            <!--Level2_Button_series-->
+            <Border Grid.Row="0" Grid.Column="1" Background="#FF3E3A39" Margin="0,0.5,0.5,0.5" Panel.ZIndex="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="9*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                <RadioButton x:Name="Set_Axis_btn" Grid.Row="1" Grid.Column="1" Content="{StaticResource _A1}" IsChecked="True"
+                                     Focusable="False" Style="{StaticResource A1_btn}" ClickMode="Press" Checked="Set_Axis_btn_Checked"/>
+                <RadioButton x:Name="Powder_Feeding_btn" Grid.Row="1" Grid.Column="2" Content="{StaticResource _A2}"
+                                      Focusable="False" Checked="Powder_Feeding_btn_Checked" Style="{StaticResource A2_btn}" ClickMode="Press"/>
+                <RadioButton x:Name="Plate_Temperature_btn" Grid.Row="1" Grid.Column="3" Content="{StaticResource _A3}"
+                                      Focusable="False" Checked="Plate_Temperature_btn_Checked" Style="{StaticResource A3_btn}" ClickMode="Press"/>
+                <RadioButton x:Name="Environment_btn" Grid.Row="1" Grid.Column="4" Content="{StaticResource _A6}"
+                                      Focusable="False" Checked="Environment_btn_Checked" Style="{StaticResource A6_btn}" ClickMode="Press"/>
+                <RadioButton x:Name="Auto_Process_btn" Grid.Row="1" Grid.Column="5" Content="{StaticResource _A4}"
+                                      Focusable="False"  Style="{StaticResource A4_btn}" Checked="Auto_Process_btn_Checked" ClickMode="Press"/>
+                <RadioButton x:Name="Single_Motion_btn" Grid.Row="1" Grid.Column="6" Content="{StaticResource _A5}"
+                                      Focusable="False" Style="{StaticResource A5_btn}" Checked="Single_Motion_btn_Checked" ClickMode="Press"/>
+               
+
+            </Grid>
+            </Border>
+        </Grid>    
+</Page>

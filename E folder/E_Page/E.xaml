@@ -1,0 +1,155 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HMI_PermanentForm"      
+      x:Class="HMI_PermanentForm.E"
+      xmlns:h="http://helix-toolkit.org/wpf"
+      xmlns:utils="clr-namespace:HMI_PermanentForm.Utils"
+      mc:Ignorable="d"       
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Dict_Home_Page" Loaded="Page_E_Loaded" Unloaded="Page_Unloaded">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Utils/Dict_SlicingView.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    <Grid>
+
+        <!--HomePage_Grid_Definition-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Button_Series-->
+        <Border Grid.Row="0" Grid.Column="1">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.55*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="3.5*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.15*"/>
+                </Grid.ColumnDefinitions>
+                <RadioButton Grid.Row="1" Grid.Column="1" Style="{DynamicResource E1_btn}" Margin="0,0,1,0"/>
+                <RadioButton Grid.Row="1" Grid.Column="2" Style="{DynamicResource E2_btn}" Margin="0,0,1,0"/>
+                <RadioButton Grid.Row="1" Grid.Column="3" Style="{DynamicResource E3_btn}" Margin="0,0,1,0"/>
+
+
+                <RadioButton Grid.Row="1" Grid.Column="5" Style="{DynamicResource E4_btn}" Margin="0,0,1,0"/>
+                <RadioButton Name="RB_3DView" Grid.Row="1" Grid.Column="6" Style="{DynamicResource E5_btn}" Margin="0,0,1,0" Checked="RB_3DView_Checked" Unchecked="RB_3DView_Unchecked"/>
+                <RadioButton Name="RB_VideoWatcher" Grid.Row="1" Grid.Column="7" Style="{DynamicResource E6_btn}" Margin="0,0,1,0" Checked="RB_VideoWatcher_Checked" Unchecked="RB_VideoWatcher_Unchecked"/>
+                <RadioButton Grid.Row="1" Grid.Column="8" Style="{DynamicResource E7_btn}" Margin="0,0,1,0"/>
+
+                <Border Grid.Row="1" Grid.Column="9" Background="#FF211C23" Margin="0,0,1,0">
+                    <Slider x:Name="LayerSlider"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Value="{Binding LastLayerIndex}" Minimum="1" Maximum="{Binding NumOfLayers}" IsSnapToTickEnabled="True" ValueChanged="LayerSlider_ValueChanged" MouseUp="LayerSlider_MouseUp"/>
+                </Border>
+
+                <Border  Grid.Row="1" Grid.Column="10" Background="#FF211C23">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="1" Grid.Column="1" Background="Black">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding Path=Value, ElementName=LayerSlider}" Foreground="White" FontSize="12"/>
+                                <TextBlock Text="  層  " Foreground="Gray" FontSize="12"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Row="3" Grid.Column="1" Background="Black">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <TextBlock  Text="{Binding Path=Value, Converter={StaticResource PercentageConverter}, ElementName=LayerSlider}" Foreground="White" FontSize="12"/>
+                                <TextBlock Text="  %  " Foreground="Gray" FontSize="12"/>
+                            </StackPanel>
+                        </Grid>
+
+                    </Grid>             
+                </Border>
+            </Grid>
+        </Border>
+
+        <!--Gauge_Series-->
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Background="#FF211C23" BorderBrush="Black" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.12*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.3*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <ProgressBar Grid.Column="0" Grid.Row="0" x:Name="CircleGauge1" DataContext="{Binding Data_PressureGauge}" Value="{Binding Percentage}" Style="{StaticResource Style_CircleGaugeBar1}" Maximum="750"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <ProgressBar Grid.Column="0" Grid.Row="0" x:Name="CircleGauge2" DataContext="{Binding Data_CavityGasPressureGauge}" Value="{Binding Percentage}" Style="{StaticResource Style_CircleGaugeBar2}" Maximum="10"/>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <ProgressBar Grid.Column="0" Grid.Row="0" x:Name="CircleGauge3" DataContext="{Binding Data_FlowRateGauge}" Value="{Binding Percentage}" Style="{StaticResource Style_CircleGaugeBar3}" Maximum="20"/>
+                </Grid>
+                <Grid Grid.Row="7">
+                    <ProgressBar Grid.Column="0" Grid.Row="0" x:Name="CircleGauge4" DataContext="{Binding Data_OxygenGauge}" Value="{Binding Percentage}" Style="{StaticResource Style_CircleGaugeBar4}" Maximum="10000"/>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <Frame x:Name="E_View3D" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"/>
+
+        <!--<Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+            <h:HelixViewport3D Name="ViewPort" Grid.Column="1" Grid.Row="1" IsRotationEnabled="True" CurrentPosition="{Binding CurrentPosition, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Style="{StaticResource Style_ViewPort3D}">
+                <h:HelixViewport3D.Camera>
+                    <PerspectiveCamera Position="{Binding Position,Mode=OneWay}"  LookDirection="{Binding LookDirection,Mode=OneWay}" FieldOfView="60" UpDirection="{Binding UpDirection,Mode=OneWay}">
+                        <PerspectiveCamera.Transform>
+                            <Transform3DGroup>
+                                <TranslateTransform3D x:Name="cameraTranslateTransform3D"></TranslateTransform3D>
+                            </Transform3DGroup>
+                        </PerspectiveCamera.Transform>
+                    </PerspectiveCamera>
+                </h:HelixViewport3D.Camera>
+                --><!-- You can also add elements here in the xaml --><!--
+                <utils:GridLines Width="250" Length="250"/>
+                <h:LinesVisual3D x:Name="HatchObj" Points="{Binding Hatch}" Color="Green">
+                </h:LinesVisual3D>
+            </h:HelixViewport3D>
+        </Border>-->
+
+
+    </Grid>
+</Page>

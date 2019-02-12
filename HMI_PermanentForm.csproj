@@ -1,0 +1,954 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EmguCV.3.1.0.1\build\EmguCV.props" Condition="Exists('packages\EmguCV.3.1.0.1\build\EmguCV.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30A7F7D5-17D5-4E86-99CE-5FFCFB31BE76}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HMI_PermanentForm</RootNamespace>
+    <AssemblyName>HMI_PermanentForm</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>發行\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>tongtai.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="AdvMotAPI, Version=1.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Advantech\Common Motion\Public\AdvMotAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="AM_Kernel_Interpretation">
+      <HintPath>lib\AM_Kernel_Interpretation.dll</HintPath>
+    </Reference>
+    <Reference Include="Automation.BDaq, Version=1.0.1.0, Culture=neutral, PublicKeyToken=463f5928d60183a0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Automation.BDaq.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomMarshalers" />
+    <Reference Include="Emgu.CV.UI, Version=3.1.0.2282, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>packages\EmguCV.3.1.0.1\lib\net30\Emgu.CV.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Emgu.CV.UI.GL, Version=3.1.0.2282, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>packages\EmguCV.3.1.0.1\lib\net30\Emgu.CV.UI.GL.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Emgu.CV.World, Version=3.1.0.2282, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>packages\EmguCV.3.1.0.1\lib\net30\Emgu.CV.World.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HelixToolkit, Version=2015.1.715.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
+      <HintPath>packages\HelixToolkit.2015.1.715\lib\portable-net4+sl4+wp71+win8\HelixToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HelixToolkit.Wpf, Version=2015.1.715.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
+      <HintPath>packages\HelixToolkit.Wpf.2015.1.715\lib\net45\HelixToolkit.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ISymWrapper" />
+    <Reference Include="LinearAlgebraAPI, Version=1.0.6145.18633, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\LinearAlgebraAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Activities.Build" />
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Conversion.v4.0" />
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Tasks.v4.0" />
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+    <Reference Include="Microsoft.Expression.Controls, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Desktop\新增資料夾\Microsoft.Expression.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Desktop\新增資料夾\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>packages\OpenTK.1.1.2225.0\lib\net20\OpenTK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>packages\OpenTK.GLControl.1.1.2225.0\lib\net20\OpenTK.GLControl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Core.1.0.104.0\lib\net451\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.104.0\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.104.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>packages\ZedGraph.5.1.5\lib\ZedGraph.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="A folder\A1\Dict\MeshExtensions.cs" />
+    <Compile Include="A folder\A1\Page\A1_2.xaml.cs">
+      <DependentUpon>A1_2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="A folder\A1\ViewModel\Data_A1_1.cs" />
+    <Compile Include="A folder\A1\ViewModel\Data_A1_2.cs" />
+    <Compile Include="A folder\A2\Page\A2_1.xaml.cs" />
+    <Compile Include="A folder\A2\Page\A2_2.xaml.cs">
+      <DependentUpon>A2_2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="A folder\A2\ViewModel\Data_A2_1.cs" />
+    <Compile Include="A folder\A1\Page\A1_1.xaml.cs" />
+    <Compile Include="A folder\A2\ViewModel\Data_A2_2.cs" />
+    <Compile Include="A folder\A3\Dict\Data_A3_1.cs" />
+    <Compile Include="A folder\A3\Dict\Elem_A3_1.cs" />
+    <Compile Include="A folder\A3\Page\A3_1.xaml.cs" />
+    <Compile Include="A folder\A4\Page\A4_2.xaml.cs">
+      <DependentUpon>A4_2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="A folder\A4\ViewModel\A4_1_ViewModel.cs" />
+    <Compile Include="A folder\A5\Page\A5_1.xaml.cs" />
+    <Compile Include="A folder\A4\ViewModel\A4_2_ViewModel.cs" />
+    <Compile Include="A folder\A4\Page\A4_1.xaml.cs" />
+    <Compile Include="A folder\A5\ViewModel\Data_A5_1.cs" />
+    <Compile Include="A folder\A6\Dict\Elem_A6_1.cs" />
+    <Compile Include="A folder\A6\Dict\Elem_A6_1_2.cs" />
+    <Compile Include="A folder\A6\Dict\Elem_A6_1_3.cs" />
+    <Compile Include="A folder\A6\Page\A6_1.xaml.cs" />
+    <Compile Include="A folder\A6\ViewModel\Data_A6.cs" />
+    <Compile Include="A_grayblock.xaml.cs">
+      <DependentUpon>A_grayblock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="B folder\B1\Page\B1_2.xaml.cs">
+      <DependentUpon>B1_2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="B folder\Window\Loading_B.xaml.cs">
+      <DependentUpon>Loading_B.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="C folder\C2\Page\C2.xaml.cs">
+      <DependentUpon>C2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="C folder\C4C5\C5.xaml.cs">
+      <DependentUpon>C5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="C folder\Dict\DIO_CommandVM.cs" />
+    <Compile Include="C folder\Dict\WaterMarkText.cs" />
+    <Compile Include="DB\ProcessInfoFormat.cs" />
+    <Compile Include="E folder\Converter\PercentageConverter.cs" />
+    <Compile Include="C folder\C1\Page\C1.xaml.cs">
+      <DependentUpon>C1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="G folder\G10\ViewModel\Axis_ViewModel.cs" />
+    <Compile Include="G folder\G10\ViewModel\ErrorMsgVM.cs" />
+    <Compile Include="Lang\Lang.cs" />
+    <Compile Include="Loading\Window\LoadingWindow.xaml.cs">
+      <DependentUpon>LoadingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TT_AM_Kernel\AMEntity\AMProcedure.cs" />
+    <Compile Include="TT_AM_Kernel\AMEntity\AMProcedureUtils.cs" />
+    <Compile Include="TT_AM_Kernel\IO\AdvDAQWrap.cs" />
+    <Compile Include="TT_AM_Kernel\IO\DIOUtils.cs" />
+    <Compile Include="TT_AM_Kernel\IO\DIO_Core.cs" />
+    <Compile Include="TT_AM_Kernel\LaserCtrl\RTC5Wrap.cs" />
+    <Compile Include="TT_AM_Kernel\LaserCtrl\ScanSystem.cs" />
+    <Compile Include="TT_AM_Kernel\Motor\AdvMotWrap.cs" />
+    <Compile Include="TT_AM_Kernel\Motor\ErrorHandle.cs" />
+    <Compile Include="TT_AM_Kernel\Motor\MotorBuilder.cs" />
+    <Compile Include="TT_AM_Kernel\Motor\MotorFunction.cs" />
+    <Compile Include="TT_AM_Kernel\Motor\MotorUtils.cs" />
+    <Compile Include="TT_AM_Kernel\Periphery\COMEntity.cs" />
+    <Compile Include="TT_AM_Kernel\Periphery\Heater.cs" />
+    <Compile Include="TT_AM_Kernel\Periphery\IHeater.cs" />
+    <Compile Include="TT_AM_Kernel\Periphery\PeripherySetting.cs" />
+    <Compile Include="TT_AM_Kernel\Utils\IAMCommand.cs" />
+    <Compile Include="TT_AM_Kernel\Utils\IConfig.cs" />
+    <Compile Include="TT_AM_Kernel\Utils\ReloaderHandler.cs" />
+    <Compile Include="Utils\ConsoleHelper.cs" />
+    <Compile Include="Utils\DIOViewModel.cs" />
+    <Compile Include="Utils\EnviromentStatusVM.cs" />
+    <Compile Include="Utils\GlobalChannel.cs" />
+    <Compile Include="Utils\Initializer.cs" />
+    <Compile Include="TT_AM_Kernel\Utils\LogHandler.cs" />
+    <Compile Include="Utils\StatusViewModel.cs" />
+    <Compile Include="Utils\SlicingViewModel.cs" />
+    <Compile Include="E folder\E14\ChangeAnimator.cs" />
+    <Compile Include="E folder\E14\CircleGaugeData.cs" />
+    <Compile Include="E folder\E14\Converter_boolToVisibility.cs" />
+    <Compile Include="E folder\E14\SpeedDialTicks.cs" />
+    <Compile Include="D folder\D_Page\D.xaml.cs">
+      <DependentUpon>D.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="C folder\C_Page\C.xaml.cs">
+      <DependentUpon>C.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="B folder\B_Page\B.xaml.cs">
+      <DependentUpon>B.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="E folder\E_Page\E.xaml.cs">
+      <DependentUpon>E.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="A folder\A_Page\A.xaml.cs">
+      <DependentUpon>A.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="G folder\G10\ViewModel\Data_Process.cs" />
+    <Compile Include="G folder\G18\Data_ProgressBarStraight.cs" />
+    <Compile Include="Utils\GridLines.cs" />
+    <Compile Include="Utils\MainUtility.cs" />
+    <Compile Include="Utils\NotifyBase.cs" />
+    <Compile Include="Utils\TimerHandler.cs" />
+    <Compile Include="Utils\View3D.xaml.cs">
+      <DependentUpon>View3D.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SideBar.xaml.cs">
+      <DependentUpon>SideBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WebCam\CamSetting.cs" />
+    <Compile Include="WebCam\CamViewModel.cs" />
+    <Compile Include="WebCam\View_Cam.xaml.cs">
+      <DependentUpon>View_Cam.xaml</DependentUpon>
+    </Compile>
+    <Page Include="A folder\A1\Dict\A1_2_icon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A1\Language\Lang_A1_1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="A folder\A1\Page\A1_2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A2\Dict\Dict_A2_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A2\Language\Lang_A2_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A2\Page\A2_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A2\Page\A2_2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="A folder\A3\Dict\Dict_A3_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A3\Language\Lang_A3_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A3\Page\A3_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A4\Dict\Dict_A4_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A4\Language\Lang_A4_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A4\Page\A4_2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="A folder\A5\Page\A5_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A5\Dict\Dict_A5_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A5\Language\Lang_A5_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A4\Page\A4_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A6\Dict\Dict_A6_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A6\Language\Lang_A6_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A6\Page\A6_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\Dict\Dict_A.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="A folder\Language\Lang_A.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="B folder\B1\Dict\Dict_B1_2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="B folder\B1\Language\Lang_B1_2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="B folder\B1\Page\B1_2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="B folder\Dict\Dict_B.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="B folder\Language\Lang_B.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="B folder\Language\Lang_En_B.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="B folder\Window\Loading_B.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="C folder\C2\Page\C2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="C folder\C4C5\C5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="C folder\Dict\Dict_C.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="C folder\Language\Lang_C.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="C folder\Language\Lang_Eng_C.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="D folder\Dict\Dict_D.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="E folder\Dict\Dict_E.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="E folder\Language\Lang_E.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="G folder\G_Dict\Dict_G.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="G folder\G_Language\Lang_G.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="A folder\A1\Page\A1_1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A folder\A1\Dict\A1_1_icon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AMicons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="A_grayblock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="E folder\E14\CircleGauge.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="D folder\D_Page\D.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="C folder\C_Page\C.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="B folder\B_Page\B.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="E folder\E_Page\E.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="A folder\A_Page\A.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lang_Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Loading\Dict\Dict_Loading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Loading\Window\LoadingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="G folder\G18\Dict_ProgressBarStraight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="C folder\C1\Page\C1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="Utils\Dict_SlicingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utils\View3D.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SideBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WebCam\View_Cam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="TT_AM_Kernel\3D Model\Arrow_D_v4.stl" />
+    <None Include="TT_AM_Kernel\3D Model\Arrow_L_v4.stl" />
+    <None Include="TT_AM_Kernel\3D Model\Arrow_R_v4.stl" />
+    <None Include="TT_AM_Kernel\3D Model\Arrow_U_v4.stl" />
+    <None Include="TT_AM_Kernel\3D Model\Blade_v2.stl" />
+    <None Include="TT_AM_Kernel\3D Model\Plate_v2.stl" />
+    <None Include="TT_AM_Kernel\3D Model\U1_v2.stl" />
+    <None Include="TT_AM_Kernel\3D Model\U2_v2.stl" />
+    <None Include="TT_AM_Kernel\Config\BuildPlatform.json" />
+    <None Include="TT_AM_Kernel\Config\PeripheryConfig.json" />
+    <None Include="TT_AM_Kernel\Config\Recoater.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Btn\btn_content_exist_normal.png" />
+    <Resource Include="Btn\btn_content_exist_pressed.png" />
+    <Resource Include="Btn\btn_content_history_normal.png" />
+    <Resource Include="Btn\btn_content_history_pressed.png" />
+    <Resource Include="Btn\btn_content_home_normal.png" />
+    <Resource Include="Btn\btn_content_home_pressed.png" />
+    <Resource Include="Btn\btn_content_loading_normal.png" />
+    <Resource Include="Btn\btn_content_loading_pressed.png" />
+    <Resource Include="Btn\btn_content_process_normal.png" />
+    <Resource Include="Btn\btn_content_process_pressed.png" />
+    <Resource Include="Btn\btn_content_system_normal.png" />
+    <Resource Include="Btn\btn_content_system_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Btn\E4_pressed.png" />
+    <Resource Include="Btn\E5_normal.png" />
+    <Resource Include="Btn\E5_pressed.png" />
+    <Resource Include="Btn\E6_normal.png" />
+    <Resource Include="Btn\E6_pressed.png" />
+    <Resource Include="Btn\E7_normal.png" />
+    <Resource Include="Btn\E7_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Btn\Tontai_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="E folder\ViewModel\" />
+    <Folder Include="F folder\" />
+    <Folder Include="G folder\G_Img\" />
+    <Folder Include="lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A1\Img\NumUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A1\Img\NumDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Btn\A1_normal.png" />
+    <Resource Include="Btn\A1_pressed.png" />
+    <Resource Include="Btn\A2_normal.png" />
+    <Resource Include="Btn\A2_pressed.png" />
+    <Resource Include="Btn\A3_normal.png" />
+    <Resource Include="Btn\A3_pressed.png" />
+    <Resource Include="Btn\A4_normal.png" />
+    <Resource Include="Btn\A4_pressed.png" />
+    <Resource Include="Btn\A5_normal.png" />
+    <Resource Include="Btn\A5_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Btn\B10_normal.png" />
+    <Resource Include="Btn\B10_pressed.png" />
+    <Resource Include="Btn\B1_normal.png" />
+    <Resource Include="Btn\B1_pressed.png" />
+    <Resource Include="Btn\B2_normal.png" />
+    <Resource Include="Btn\B2_pressed.png" />
+    <Resource Include="Btn\B3_normal.png" />
+    <Resource Include="Btn\B3_pressed.png" />
+    <Resource Include="Btn\B4_normal.png" />
+    <Resource Include="Btn\B4_pressed.png" />
+    <Resource Include="Btn\B5_normal.png" />
+    <Resource Include="Btn\B5_pressed.png" />
+    <Resource Include="Btn\B6_normal.png" />
+    <Resource Include="Btn\B6_pressed.png" />
+    <Resource Include="Btn\B7_normal.png" />
+    <Resource Include="Btn\B7_pressed.png" />
+    <Resource Include="Btn\B8_normal.png" />
+    <Resource Include="Btn\B8_pressed.png" />
+    <Resource Include="Btn\B9_normal.png" />
+    <Resource Include="Btn\B9_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A2\Img\NumDown.png" />
+    <Resource Include="A folder\A2\Img\NumUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A5\Img\E4_normal.png" />
+    <Resource Include="A folder\A5\Img\E4_pressed.png" />
+    <Resource Include="A folder\A5\Img\E5_normal.png" />
+    <Resource Include="A folder\A5\Img\E5_pressed.png" />
+    <Resource Include="A folder\A5\Img\E6_normal.png" />
+    <Resource Include="A folder\A5\Img\E6_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Btn\E1_normal.png" />
+    <Resource Include="Btn\E1_pressed.png" />
+    <Resource Include="Btn\E2_normal.png" />
+    <Resource Include="Btn\E2_pressed.png" />
+    <Resource Include="Btn\E3_normal.png" />
+    <Resource Include="Btn\E3_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Btn\E4_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="E folder\Img\E1_normal.png" />
+    <Resource Include="E folder\Img\E1_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="E folder\Img\E2_normal.png" />
+    <Resource Include="E folder\Img\E2_pressed.png" />
+    <Resource Include="E folder\Img\E3_normal.png" />
+    <Resource Include="E folder\Img\E3_pressed.png" />
+    <Resource Include="E folder\Img\E4_normal.png" />
+    <Resource Include="E folder\Img\E4_pressed.png" />
+    <Resource Include="E folder\Img\E5_normal.png" />
+    <Resource Include="E folder\Img\E5_pressed.png" />
+    <Resource Include="E folder\Img\E6_normal.png" />
+    <Resource Include="E folder\Img\E6_pressed.png" />
+    <Resource Include="E folder\Img\E7_normal.png" />
+    <Resource Include="E folder\Img\E7_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Btn\A_normal.png" />
+    <Resource Include="Btn\A_pressed.png" />
+    <Resource Include="Btn\B_normal.png" />
+    <Resource Include="Btn\B_pressed.png" />
+    <Resource Include="Btn\C_normal.png" />
+    <Resource Include="Btn\C_pressed.png" />
+    <Resource Include="Btn\D_normal.png" />
+    <Resource Include="Btn\D_pressed.png" />
+    <Resource Include="Btn\E_normal.png" />
+    <Resource Include="Btn\E_pressed.png" />
+    <Resource Include="Btn\F_normal.png" />
+    <Resource Include="Btn\F_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Btn\C1_normal.png" />
+    <Resource Include="Btn\C1_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Btn\C2_normal.png" />
+    <Resource Include="Btn\C2_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="C folder\Img\C1_normal.png" />
+    <Resource Include="C folder\Img\C1_pressed.png" />
+    <Resource Include="C folder\Img\C2_normal.png" />
+    <Resource Include="C folder\Img\C2_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\Img\A1_normal.png" />
+    <Resource Include="A folder\Img\A1_pressed.png" />
+    <Resource Include="A folder\Img\A2_normal.png" />
+    <Resource Include="A folder\Img\A2_pressed.png" />
+    <Resource Include="A folder\Img\A3_normal.png" />
+    <Resource Include="A folder\Img\A3_pressed.png" />
+    <Resource Include="A folder\Img\A4_normal.png" />
+    <Resource Include="A folder\Img\A4_pressed.png" />
+    <Resource Include="A folder\Img\A5_normal.png" />
+    <Resource Include="A folder\Img\A5_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="B folder\Img\B1_normal.png" />
+    <Resource Include="B folder\Img\B1_pressed.png" />
+    <Resource Include="B folder\Img\B2_normal.png" />
+    <Resource Include="B folder\Img\B2_pressed.png" />
+    <Resource Include="B folder\Img\B3_normal.png" />
+    <Resource Include="B folder\Img\B3_pressed.png" />
+    <Resource Include="B folder\Img\B4_normal.png" />
+    <Resource Include="B folder\Img\B4_pressed.png" />
+    <Resource Include="B folder\Img\B5_normal.png" />
+    <Resource Include="B folder\Img\B5_pressed.png" />
+    <Resource Include="B folder\Img\B6_normal.png" />
+    <Resource Include="B folder\Img\B6_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="C folder\Img\DI_normal.png" />
+    <Resource Include="C folder\Img\DI_pressed.png" />
+    <Resource Include="C folder\Img\DO_normal.png" />
+    <Resource Include="C folder\Img\DO_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A3\Img\A3_05.png" />
+    <Resource Include="A folder\A3\Img\A3_06.png" />
+    <Resource Include="A folder\A3\Img\A3_1_NumericDown.png" />
+    <Resource Include="A folder\A3\Img\A3_1_NumericUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A1\Img\A1_1_08_1_normal.png" />
+    <Resource Include="A folder\A1\Img\A1_1_08_1_pressed.png" />
+    <Resource Include="A folder\A1\Img\A1_1_08_2_normal.png" />
+    <Resource Include="A folder\A1\Img\A1_1_08_2_pressed.png" />
+    <Resource Include="A folder\A1\Img\A1_1_08_3_normal.png" />
+    <Resource Include="A folder\A1\Img\A1_1_08_3_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A4\Img\A4_1_2_normal.png" />
+    <Resource Include="A folder\A4\Img\A4_1_2_warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A5\Img\A4_1_2_normal.png" />
+    <Resource Include="A folder\A5\Img\A4_1_2_warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A5\Img\A4_1_3_normal.png" />
+    <Resource Include="A folder\A5\Img\A4_1_3_warning.png" />
+    <Resource Include="A folder\A5\Img\A4_1_4_normal.png" />
+    <Resource Include="A folder\A5\Img\A4_1_4_warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A4\Img\A4_1_3_normal.png" />
+    <Resource Include="A folder\A4\Img\A4_1_3_warning.png" />
+    <Resource Include="A folder\A4\Img\A4_1_4_normal.png" />
+    <Resource Include="A folder\A4\Img\A4_1_4_warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A4\Img\E4_normal.png" />
+    <Resource Include="A folder\A4\Img\E4_pressed.png" />
+    <Resource Include="A folder\A4\Img\E5_normal.png" />
+    <Resource Include="A folder\A4\Img\E5_pressed.png" />
+    <Resource Include="A folder\A4\Img\E6_normal.png" />
+    <Resource Include="A folder\A4\Img\E6_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A4\Img\A4_1_06_normal.png" />
+    <Resource Include="A folder\A4\Img\A4_1_06_pressed.png" />
+    <Resource Include="A folder\A4\Img\A4_1_07_normal.png" />
+    <Resource Include="A folder\A4\Img\A4_1_07_pressed.png" />
+    <Resource Include="A folder\A4\Img\A4_1_08_normal.png" />
+    <Resource Include="A folder\A4\Img\A4_1_08_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="B folder\B1\Img\B1_2_01_normal.png" />
+    <Resource Include="B folder\B1\Img\B1_2_01_pressed.png" />
+    <Resource Include="B folder\B1\Img\B1_2_02_normal.png" />
+    <Resource Include="B folder\B1\Img\B1_2_02_pressed.png" />
+    <Resource Include="B folder\B1\Img\B1_2_03_normal.png" />
+    <Resource Include="B folder\B1\Img\B1_2_03_pressed.png" />
+    <Resource Include="B folder\B1\Img\B1_2_04_normal.png" />
+    <Resource Include="B folder\B1\Img\B1_2_04_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A1\Img\Home_normal_resized.png" />
+    <Resource Include="A folder\A1\Img\Home_pressed_resized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tongtai.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A6\Img\A3_05.png" />
+    <Resource Include="A folder\A6\Img\A3_06.png" />
+    <Resource Include="A folder\A6\Img\A3_1_NumericDown.png" />
+    <Resource Include="A folder\A6\Img\A3_1_NumericUp.png" />
+    <Resource Include="A folder\A6\Img\上_1.png" />
+    <Resource Include="A folder\A6\Img\上_2.png" />
+    <Resource Include="A folder\A6\Img\下_1.png" />
+    <Resource Include="A folder\A6\Img\下_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\Img\A6_normal.png" />
+    <Resource Include="A folder\Img\A6_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="A folder\A1\Img\U1上_正常.png" />
+    <Resource Include="A folder\A1\Img\U1上_觸碰.png" />
+    <Resource Include="A folder\A1\Img\U1上_點擊.png" />
+    <Resource Include="A folder\A1\Img\U1下_正常.png" />
+    <Resource Include="A folder\A1\Img\U1下_觸碰.png" />
+    <Resource Include="A folder\A1\Img\U1下_點擊.png" />
+    <Resource Include="A folder\A1\Img\U2上_正常.png" />
+    <Resource Include="A folder\A1\Img\U2上_觸碰.png" />
+    <Resource Include="A folder\A1\Img\U2上_點擊.png" />
+    <Resource Include="A folder\A1\Img\U2下_正常.png" />
+    <Resource Include="A folder\A1\Img\U2下_觸碰.png" />
+    <Resource Include="A folder\A1\Img\U2下_點擊.png" />
+    <Resource Include="A folder\A1\Img\上_正常.png" />
+    <Resource Include="A folder\A1\Img\上_觸碰.png" />
+    <Resource Include="A folder\A1\Img\上_點擊.png" />
+    <Resource Include="A folder\A1\Img\下_正常.png" />
+    <Resource Include="A folder\A1\Img\下_觸碰.png" />
+    <Resource Include="A folder\A1\Img\下_點擊.png" />
+    <Resource Include="A folder\A1\Img\右_正常.png" />
+    <Resource Include="A folder\A1\Img\右_觸碰.png" />
+    <Resource Include="A folder\A1\Img\右_點擊.png" />
+    <Resource Include="A folder\A1\Img\左_正常.png" />
+    <Resource Include="A folder\A1\Img\左_觸碰.png" />
+    <Resource Include="A folder\A1\Img\左_點擊.png" />
+    <Resource Include="A folder\A1\Img\歸零_正常.png" />
+    <Resource Include="A folder\A1\Img\歸零_觸碰.png" />
+    <Resource Include="A folder\A1\Img\歸零_點擊.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Btn\G61_normal.png" />
+    <Resource Include="Btn\G61_pressed.png" />
+    <Resource Include="Btn\G62_normal.png" />
+    <Resource Include="Btn\G62_pressed.png" />
+    <Resource Include="Btn\G63_normal.png" />
+    <Resource Include="Btn\G63_pressed.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 封裝。請啟用 NuGet 封裝還原，以下載該封裝。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EmguCV.3.1.0.1\build\EmguCV.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EmguCV.3.1.0.1\build\EmguCV.props'))" />
+    <Error Condition="!Exists('packages\EmguCV.3.1.0.1\build\EmguCV.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EmguCV.3.1.0.1\build\EmguCV.targets'))" />
+    <Error Condition="!Exists('packages\System.Data.SQLite.Core.1.0.104.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Data.SQLite.Core.1.0.104.0\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="packages\EmguCV.3.1.0.1\build\EmguCV.targets" Condition="Exists('packages\EmguCV.3.1.0.1\build\EmguCV.targets')" />
+  <Import Project="packages\System.Data.SQLite.Core.1.0.104.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('packages\System.Data.SQLite.Core.1.0.104.0\build\net451\System.Data.SQLite.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

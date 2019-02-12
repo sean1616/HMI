@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="_C1">
+        系統輸入狀態
+    </sys:String>
+
+    <sys:String x:Key="_C2">
+        系統輸出狀態
+    </sys:String>
+
+    <sys:String x:Key="_C3">
+        ID:Tongtai
+    </sys:String>
+
+    <sys:String x:Key="_C4">
+        切換身份
+    </sys:String>
+
+    <sys:String x:Key="_C5">
+        登入
+    </sys:String>
+
+</ResourceDictionary>

@@ -1,0 +1,72 @@
+﻿<Window x:Class="Home_Page.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Home_Page"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <!--HomePage_Grid_Definition-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+    
+    <!--Button_Series-->    
+    <Border Grid.Row="0" Grid.Column="1" Background="Gray">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="0.15*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="1" Grid.Column="1" Content="製程開始"/>
+            <Button Grid.Row="1" Grid.Column="2" Content="製程暫停"/>
+            <Button Grid.Row="1" Grid.Column="3" Content="製程停止"/>
+            <Button Grid.Row="1" Grid.Column="5" Content="2D視圖"/>
+            <Button Grid.Row="1" Grid.Column="6" Content="3D視圖"/>
+            <Button Grid.Row="1" Grid.Column="7" Content="實際影像"/>
+            <Button Grid.Row="1" Grid.Column="8" Content="物件狀態"/>
+            <Slider Grid.Row="1" Grid.Column="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170"/>
+        </Grid>
+    </Border>
+
+        <!--Gauge_Series-->
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.25*"/>
+                </Grid.RowDefinitions>
+            </Grid>
+        </Border>
+        
+        <!--中間視圖-->
+        <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+            
+        </Border>
+    </Grid>
+</Window>

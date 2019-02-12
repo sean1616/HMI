@@ -1,0 +1,306 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                     xmlns:tick="clr-namespace:HMI_PermanentForm">
+
+
+
+    <ImageSource x:Key="A3_1_NumericUp">Img/A3_1_NumericUp.png</ImageSource>
+    <ImageSource x:Key="A3_1_NumericDown">Img/A3_1_NumericDown.png</ImageSource>
+
+    <ImageSource x:Key="A3_05">Img/A3_05.png</ImageSource>
+    <ImageSource x:Key="A3_06">Img/A3_06.png</ImageSource>
+
+    
+    <!--ProgressBar Style -->
+    <Style x:Key="A6_1_ProgressStyle" TargetType="{x:Type ProgressBar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ProgressBar}">
+                    <Viewbox>
+                        <Grid>
+                            <Border  x:Name="BackBorder" Width="800" Height="47" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#3e3a39" CornerRadius="5" Margin="0,0,0,20">
+                                <Grid>
+                                    <tick:Elem_A6_1 Maximum="{Binding DataContext.Maximum,FallbackValue=1000,RelativeSource={RelativeSource TemplatedParent}}"                                                     
+                                                    Minimum="{Binding DataContext.Minimum ,FallbackValue=0,RelativeSource={RelativeSource TemplatedParent}}"     
+                                                    TargetValue="{Binding Path=A6_03_TargetTorrValue,FallbackValue=300}"
+                                                    LimitValue="{Binding DataContext.LimitValue ,FallbackValue=760,RelativeSource={RelativeSource TemplatedParent}}"
+                                                    ThresholdOne="{Binding DataContext.ThresholdOne,FallbackValue=200,RelativeSource={RelativeSource TemplatedParent}}" 
+                                                    ThresholdTwo="{Binding DataContext.ThresholdTwo,FallbackValue=760,RelativeSource={RelativeSource TemplatedParent}}"  
+                                                    CurrentValue="{Binding Path=A6_03_TorrCurrentValue,FallbackValue=450}"                                                   
+                                                    />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="A6_2_ProgressStyle" TargetType="{x:Type ProgressBar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ProgressBar}">
+                    <Viewbox>
+                        <Grid>
+                            <Border  x:Name="BackBorder" Width="800" Height="47" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#3e3a39" CornerRadius="5" Margin="0,0,0,20">
+                                <Grid>
+                                    <tick:Elem_A6_1_2 Maximum="{Binding DataContext.Maximum,FallbackValue=10000,RelativeSource={RelativeSource TemplatedParent}}"                                                     
+                                                    Minimum="{Binding DataContext.Minimum ,FallbackValue=0,RelativeSource={RelativeSource TemplatedParent}}"     
+                                                    TargetValue="{Binding Path=A3_TargetTemperatureValue,FallbackValue=380}"
+                                                    LimitValue="{Binding DataContext.LimitValue ,FallbackValue=10000,RelativeSource={RelativeSource TemplatedParent}}"
+                                                    ThresholdOne="{Binding DataContext.ThresholdOne,FallbackValue=3000,RelativeSource={RelativeSource TemplatedParent}}" 
+                                                    ThresholdTwo="{Binding DataContext.ThresholdTwo,FallbackValue=10000,RelativeSource={RelativeSource TemplatedParent}}"  
+                                                    CurrentValue="{Binding Path=A6_05_O2Value,FallbackValue=1000}"                                                   
+                                                    />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="A6_3_ProgressStyle" TargetType="{x:Type ProgressBar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ProgressBar}">
+                    <Viewbox>
+                        <Grid>
+                            <Border  x:Name="BackBorder" Width="800" Height="47" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#3e3a39" CornerRadius="5" Margin="0,0,0,20">
+                                <Grid>
+                                    <tick:Elem_A6_1_3 Maximum="{Binding DataContext.Maximum,FallbackValue=7,RelativeSource={RelativeSource TemplatedParent}}"                                                     
+                                                    Minimum="{Binding DataContext.Minimum ,FallbackValue=0,RelativeSource={RelativeSource TemplatedParent}}"     
+                                                    TargetValue="{Binding Path=A3_TargetTemperatureValue,FallbackValue=2}"
+                                                    LimitValue="{Binding DataContext.LimitValue ,FallbackValue=5,RelativeSource={RelativeSource TemplatedParent}}"
+                                                    ThresholdOne="{Binding DataContext.ThresholdOne,FallbackValue=2,RelativeSource={RelativeSource TemplatedParent}}" 
+                                                    ThresholdTwo="{Binding DataContext.ThresholdTwo,FallbackValue=5,RelativeSource={RelativeSource TemplatedParent}}"  
+                                                    CurrentValue="{Binding Path=FlowLevel,FallbackValue=3}"                                                    
+                                                    />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--NumericalUpDown Style -->
+    <Style x:Key="A6_1_NumericUpDown" TargetType="{x:Type xctk:DecimalUpDown}">
+        <!-- TextBlock style -->
+        <Style.Resources>
+            <Style TargetType="{x:Type xctk:WatermarkTextBox}">
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate  TargetType="{x:Type xctk:WatermarkTextBox}">
+                            <Border x:Name="Border" BorderThickness="0" MinHeight="20"  BorderBrush="{TemplateBinding BorderBrush}"  HorizontalAlignment="{TemplateBinding HorizontalAlignment}" >
+                                <Grid>
+                                    <ScrollViewer x:Name="PART_ContentHost" Style="{DynamicResource ScorllStyle}"  
+                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                    <ContentPresenter x:Name="PART_WatermarkHost" Content="{TemplateBinding Watermark}" ContentTemplate="{TemplateBinding WatermarkTemplate}" 
+                                                      VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="False" Visibility="Visible" />
+                                </Grid>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <!-- 上下增減值按鈕 style -->
+            <Style x:Name="buttonUpDown" TargetType="{x:Type xctk:ButtonSpinner}">
+                <Setter Property="VerticalAlignment" Value="Center"/>                
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type xctk:ButtonSpinner}" >
+                            <Border x:Name="Border" BorderThickness="0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ContentPresenter Content="{TemplateBinding Content}" Focusable="True" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Grid Grid.Column="1" Width="19">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <RepeatButton  x:Name="PART_IncreaseButton" IsTabStop="{TemplateBinding IsTabStop}" >
+                                            <RepeatButton.Resources>
+                                                <Style TargetType="{x:Type RepeatButton}">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="{x:Type RepeatButton}">
+                                                                <Grid SnapsToDevicePixels="true">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="0.6*"/>
+                                                                        <ColumnDefinition/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Image Name="ImageName" Grid.ColumnSpan="2" Stretch="Uniform"/>
+                                                                    <ContentPresenter x:Name="contentPresenter" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                                </Grid>
+                                                                <ControlTemplate.Triggers>
+                                                                    <Trigger Property="IsPressed" Value="True">
+                                                                        <Setter TargetName="ImageName" Property="Image.Source">
+                                                                            <Setter.Value>
+                                                                                <BitmapImage UriSource="../Img/上_1.png"></BitmapImage>
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                    </Trigger>
+                                                                    <Trigger Property="IsPressed" Value="False">
+                                                                        <Setter TargetName="ImageName" Property="Image.Source">
+                                                                            <Setter.Value>
+                                                                                <BitmapImage UriSource="../Img/上_2.png"></BitmapImage>
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                    </Trigger>
+                                                                    <Trigger Property="IsMouseOver" Value="true">
+                                                                        <Setter TargetName="ImageName" Property="Image.Source">
+                                                                            <Setter.Value>
+                                                                                <BitmapImage UriSource="../Img/上_1.png"></BitmapImage>
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                    </Trigger>
+                                                                </ControlTemplate.Triggers>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </RepeatButton.Resources>
+                                        </RepeatButton>
+
+
+                                        <RepeatButton x:Name="PART_DecreaseButton" IsTabStop="{TemplateBinding IsTabStop}" Background="#211c23" BorderThickness="0" BorderBrush="Black" Grid.Row="1" >
+                                            <RepeatButton.Resources>
+                                                <Style TargetType="{x:Type RepeatButton}">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="{x:Type RepeatButton}">
+                                                                <Grid SnapsToDevicePixels="true">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="0.6*"/>
+                                                                        <ColumnDefinition/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Image Name="ImageName" Grid.ColumnSpan="2" Stretch="Uniform"/>
+                                                                    <ContentPresenter x:Name="contentPresenter" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                                </Grid>
+                                                                <ControlTemplate.Triggers>
+                                                                    <Trigger Property="IsPressed" Value="True">
+                                                                        <Setter TargetName="ImageName" Property="Image.Source">
+                                                                            <Setter.Value>
+                                                                                <BitmapImage UriSource="../Img/下_2.png"></BitmapImage>
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                    </Trigger>
+                                                                    <Trigger Property="IsPressed" Value="False">
+                                                                        <Setter TargetName="ImageName" Property="Image.Source">
+                                                                            <Setter.Value>
+                                                                                <BitmapImage UriSource="../Img/下_1.png"></BitmapImage>
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                    </Trigger>
+                                                                    <Trigger Property="IsMouseOver" Value="true">
+                                                                        <Setter TargetName="ImageName" Property="Image.Source">
+                                                                            <Setter.Value>
+                                                                                <BitmapImage UriSource="../Img/下_2.png"></BitmapImage>
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                    </Trigger>
+                                                                </ControlTemplate.Triggers>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </RepeatButton.Resources>
+                                        </RepeatButton>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" SourceName="PART_IncreaseButton" Value="False"/>
+                               
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <!--項目名稱 Style -->
+    <Style x:Key="A6_1_ItemStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+
+    <!--溫度數值 Style -->
+    <Style x:Key="A6_1_ValueStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="25"/>
+    </Style>
+
+    <!-- A3_05 style -->
+    <Style x:Key="A6_05_Style" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Width" Value="15"/>
+        <Setter Property="Height" Value="15"/>        
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="../Img/A3_05.png"/>
+            </Setter.Value>            
+        </Setter>        
+    </Style>
+
+    <!-- A3_06 style -->
+    <Style x:Key="A6_06_Style" TargetType="{x:Type Button}">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Width" Value="15"/>
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="../Img/A3_06.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+   
+    <!--A6_07_btn-->
+    <Style x:Key="A6_07_btn" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>        
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="FontFamily" Value="Gen Jyuu Gothic"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Foreground" Value="#dbdcdc"/>        
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Width" Value="70"/>
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="#211c23" SnapsToDevicePixels="true"  BorderThickness="1" BorderBrush="White">
+                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="Center" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="#585555"/>                            
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="#585555"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

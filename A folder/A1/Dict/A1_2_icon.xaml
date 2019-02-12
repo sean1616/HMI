@@ -1,0 +1,418 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI_PermanentForm">
+
+    <Style x:Key="U1_up_btn" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="ClickMode" Value="Press"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Margin="0" CornerRadius="5">
+                        <Image Name="Imagesource" Source="../Img/U1上_正常.png" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/U1上_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/U1上_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/U1上_點擊.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <!--<Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="#dbdcdc"/>
+                        </Trigger>-->
+                        <!--<Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#245093"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="U1_down_btn" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="ClickMode" Value="Press"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Margin="0" CornerRadius="5">
+                        <Image Name="Imagesource" Source="../Img/U1下_正常.png" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/U1下_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/U1下_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/U1下_點擊.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <!--<Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="#dbdcdc"/>
+                        </Trigger>-->
+                        <!--<Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#245093"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="U2_up_btn" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="ClickMode" Value="Press"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Margin="0" CornerRadius="5">
+                        <Image Name="Imagesource" Source="../Img/U2上_正常.png" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/U2上_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/U2上_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/U2上_點擊.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <!--<Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="#dbdcdc"/>
+                        </Trigger>-->
+                        <!--<Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#245093"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="U2_down_btn" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="ClickMode" Value="Press"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Margin="0" CornerRadius="5">
+                        <Image Name="Imagesource" Source="../Img/U2下_正常.png" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/U2下_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/U2下_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/U2下_點擊.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <!--<Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="#dbdcdc"/>
+                        </Trigger>-->
+                        <!--<Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#245093"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Right_arrow_btn" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="ClickMode" Value="Press"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Margin="0" CornerRadius="5">
+                        <Image Name="Imagesource" Source="../Img/右_正常.png" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/右_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/右_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/右_點擊.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <!--<Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="#dbdcdc"/>
+                        </Trigger>-->
+                        <!--<Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#245093"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Left_arrow_btn" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="ClickMode" Value="Press"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Margin="0" CornerRadius="5">
+                        <Image Name="Imagesource" Source="../Img/左_正常.png" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/左_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/左_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/左_點擊.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <!--<Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="#dbdcdc"/>
+                        </Trigger>-->
+                        <!--<Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#245093"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Up_arrow_btn" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="ClickMode" Value="Press"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Margin="0" CornerRadius="5">
+                        <Image Name="Imagesource" Source="../Img/上_正常.png" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/上_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/上_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/上_點擊.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <!--<Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="#dbdcdc"/>
+                        </Trigger>-->
+                        <!--<Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#245093"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Down_arrow_btn" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="ClickMode" Value="Press"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Margin="0" CornerRadius="5">
+                        <Image Name="Imagesource" Source="../Img/下_正常.png" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/下_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/下_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/下_點擊.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <!--<Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="#dbdcdc"/>
+                        </Trigger>-->
+                        <!--<Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#245093"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Mid_btn" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="ClickMode" Value="Press"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Margin="0" CornerRadius="5">
+                        <Image Name="Imagesource" Source="../Img/歸零_正常.png" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/歸零_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/歸零_觸碰.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Imagesource" Property="Image.Source">
+                                <Setter.Value>
+                                    <BitmapImage UriSource="../Img/歸零_點擊.png"></BitmapImage>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <!--<Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="#dbdcdc"/>
+                        </Trigger>-->
+                        <!--<Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#245093"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

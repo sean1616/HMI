@@ -1,0 +1,88 @@
+﻿<Page x:Class="HMI_PermanentForm.C"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HMI_PermanentForm"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Dict_System_Page">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../C folder/Dict/Dict_C.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Level2_Button_series-->
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="#FF3E3A39">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.3*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1.3*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="0.01*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="0.6*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--預設語言-->
+                    <RadioButton x:Name="Lang1_btn" Grid.Column="1" Content="Ch" Checked="Lang1_btn_Checked" IsChecked="True" Style="{StaticResource C_Ch_btn}"/>
+                    <RadioButton x:Name="Lang2_btn" Grid.Column="2" Content="En" Checked="Lang2_btn_Checked" Style="{StaticResource C_Ch_btn}"/>
+                </Grid>
+               
+                <RadioButton Name="C1_btn" Grid.Row="1" Grid.Column="1" Foreground="White" Content="{DynamicResource _C1}"  Margin="0" BorderThickness="2" BorderBrush="#FF3E3A39"
+                                     Focusable="False"  Style="{StaticResource C1_btn}" Checked="C1_btn_Checked"/>
+                <RadioButton Name="C2_btn" Grid.Row="1" Grid.Column="3" Foreground="White" Content="{DynamicResource _C2}"  BorderThickness="2" BorderBrush="#FF3E3A39"
+                                      Focusable="False" Style="{StaticResource C2_btn}" Checked="C2_btn_Checked"/>
+
+                <Grid Grid.Column="5" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.3*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="{DynamicResource _C3}" HorizontalAlignment="Center" Foreground="#727171" FontFamily="Gen Jyuu Gothic"/>
+                    <Button Name="C4_btn" Grid.Row="3" Grid.Column="0" Content="{DynamicResource _C4}" Style="{DynamicResource C4_btn}" Click="C4_btn_Click"/>
+                    <Button Name="C5_btn" Grid.Row="3" Grid.Column="2" Content="{DynamicResource _C5}" Style="{DynamicResource C5_btn}" Click="C5_btn_Click"/>
+                </Grid>
+
+            </Grid>
+        </Border>
+
+        <Frame Grid.Row="1" Grid.ColumnSpan="2" Name="Change_Page"/>
+
+    </Grid>
+</Page>

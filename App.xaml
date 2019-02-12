@@ -1,0 +1,50 @@
+﻿<Application x:Class="HMI_PermanentForm.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Startup="ApplicationStart"
+             >
+    <!--StartupUri="MainWindow.xaml"-->
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="AMicons.xaml"/>
+                <ResourceDictionary Source="Loading/Dict/Dict_Loading.xaml"/>
+                <ResourceDictionary Source="Lang_Main.xaml"/>
+
+                <ResourceDictionary Source="A folder/Language/Lang_A.xaml"/>
+                <ResourceDictionary Source="A folder/Dict/Dict_A.xaml"/>
+                <ResourceDictionary Source="A folder/A1/Dict/A1_1_icon.xaml"/>
+                <ResourceDictionary Source="A folder/A1/Dict/A1_2_icon.xaml"/>
+                <ResourceDictionary Source="A folder/A1/Language/Lang_A1_1.xaml"/>
+                <ResourceDictionary Source="A folder/A2/Language/Lang_A2_1.xaml"/>
+                <ResourceDictionary Source="A folder/A3/Language/Lang_A3_1.xaml"/>
+                <ResourceDictionary Source="A folder/A3/Dict/Dict_A3_1.xaml"/>
+                <ResourceDictionary Source="A folder/A4/Language/Lang_A4_1.xaml"/>
+                <ResourceDictionary Source="A folder/A4/Dict/Dict_A4_1.xaml"/>
+                <ResourceDictionary Source="A folder/A5/Dict/Dict_A5_1.xaml"/>
+                <ResourceDictionary Source="A folder/A5/Language/Lang_A5_1.xaml"/>
+                <ResourceDictionary Source="A folder/A6/Language/Lang_A6_1.xaml"/>
+                <ResourceDictionary Source="A folder/A6/Dict/Dict_A6_1.xaml"/>
+
+                <ResourceDictionary Source="B folder/Dict/Dict_B.xaml"/>
+                <ResourceDictionary Source="B folder/B1/Dict/Dict_B1_2.xaml"/>
+                <ResourceDictionary Source="B folder/B1/Language/Lang_B1_2.xaml"/>
+                <!--<ResourceDictionary Source="B folder/Language/Lang_B.xaml"/>-->
+
+                <ResourceDictionary Source="C folder/Dict/Dict_C.xaml"/>
+                <!--<ResourceDictionary Source="C folder/Language/Lang_C.xaml"/>-->
+
+                <ResourceDictionary Source="D folder/Dict/Dict_D.xaml"/>
+
+                <ResourceDictionary Source="G folder/G18/Dict_ProgressBarStraight.xaml"/>
+                <ResourceDictionary Source="G folder/G_Language\Lang_G.xaml"/>
+                <ResourceDictionary Source="G folder/G_Dict\Dict_G.xaml"/>
+                
+                <ResourceDictionary Source="E folder/E14/CircleGauge.xaml"/>                
+                <ResourceDictionary Source="E folder/Language/Lang_E.xaml"/>
+                <ResourceDictionary Source="E folder/Dict/Dict_E.xaml"/>
+                                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

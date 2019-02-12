@@ -1,0 +1,271 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" 
+        x:Class="HMI_PermanentForm.MainWindow"        
+        Title="MainWindow"  WindowState="Maximized"   
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" WindowStyle="None"                             
+        HorizontalAlignment="Left" VerticalAlignment="Top" WindowStartupLocation="CenterScreen" ShowInTaskbar="False"
+        xmlns:progressbardata="clr-namespace:HMI_PermanentForm"
+        xmlns:local="clr-namespace:HMI_PermanentForm" TextOptions.TextFormattingMode="Display" Closing="Window_Closing"
+        xmlns:utils="clr-namespace:HMI_PermanentForm.Utils">
+
+    <Grid >
+        <!--Grid_Definition-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130*"/>
+            <RowDefinition Height="950*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="250*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Tongtai_logo-->
+        <Border Grid.Row="0" Grid.Column="0" BorderBrush="#FF221714" BorderThickness="1">
+            <Image Source="btn/Tontai_logo.png" Stretch="UniformToFill"/>
+        </Border>
+
+        <!--Main_Button_Series-->
+        <RadioButton x:Name="A" Grid.Row="0" Grid.Column="1" Style="{DynamicResource A}" Click="Process_Page_btn_Click"/>
+        <RadioButton x:Name="B" Grid.Row="0" Grid.Column="2" Style="{DynamicResource B}" Click="Loading_Page_btn_Click"/>
+        <RadioButton x:Name="C" Grid.Row="0" Grid.Column="3" Style="{DynamicResource C}" Click="System_Page_btn_Click"/>
+        <RadioButton x:Name="D" Grid.Row="0" Grid.Column="4" Style="{DynamicResource D}" Click="History_Page_btn_Click"/>
+        <RadioButton x:Name="E" Grid.Row="0" Grid.Column="5" Style="{DynamicResource E}" Click="Home_Page_btn_Click" IsChecked="True"/>
+        <RadioButton x:Name="F" Grid.Row="0" Grid.Column="6" Style="{DynamicResource F}" Click="Exit_btn_Click"/>
+
+        <!--Change_Page-->
+        <Frame x:Name="Change_Page" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Background="Black" NavigationUIVisibility="Hidden"/>
+
+        <!--右方常駐狀態列-->
+        <Border Grid.Row="1" Grid.Column="6" Background="#FF211C23" BorderBrush="Black" BorderThickness="1">
+            <Grid>
+                <!--Grid_Definition-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.9*"/>
+                        <RowDefinition Height="0.6*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="3.77*"/>
+                        <RowDefinition Height="0.8*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="6*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <ToggleButton x:Name="G01" Content="{StaticResource _G01}" Focusable="False" Style="{DynamicResource G01_btn}" IsEnabled="False" IsChecked="{Binding Path=IsSystemStatusCheck, FallbackValue=false}"/>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <ToggleButton x:Name="G02" Content="{StaticResource _G02}" Focusable="False" Style="{DynamicResource G01_btn}" IsEnabled="False" IsChecked="{Binding Path=IsProcessStatusCheck, FallbackValue=false}"/>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4.5*"/>
+                            <ColumnDefinition Width="0.1*"/>
+                            <ColumnDefinition Width="7.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0" HorizontalAlignment="Left">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="0.8*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="0.8*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="G03" Grid.Row="0" Text="{StaticResource _G03}" Style="{DynamicResource Normal}"/>
+                            <TextBlock x:Name="G04" Grid.Row="1"><Run x:Name="zero1" Text="{Binding Rest}" Style="{DynamicResource Num_Normal_Run_G}"/><Run Text="{Binding CurrentLayer}" x:Name="layers" Style="{DynamicResource Num_Normal_Run}" DataContext="{Binding models}"/></TextBlock>
+
+                            <TextBlock x:Name="G05" Grid.Row="3" Text="{StaticResource _G05}" Style="{DynamicResource Normal}"/>
+                            <TextBlock x:Name="G06" Grid.Row="4"><Run Text="{Binding Rest}" x:Name="zero2" Style="{DynamicResource Num_Normal_Run_G}"/><Run Text="{Binding TotalLayer}" x:Name="All_layers" Style="{DynamicResource Num_Normal_Run}" DataContext="{Binding models}"/></TextBlock>
+
+                            <TextBlock x:Name="G07" Grid.Row="6" Text="{StaticResource _G07}" Style="{DynamicResource Normal}"/>
+
+                            <TextBlock x:Name="G08" Grid.Row="7" Text="{Binding Path=FinishedDateValue, FallbackValue=2016/9/5}" Style="{DynamicResource Num_Normal}"/>
+                            <TextBlock x:Name="G09" Grid.Row="8" Text="{Binding Path=FinishedTimeValue, FallbackValue=17:19:30}" Style="{DynamicResource Num_Normal}"/>
+                        </Grid>
+
+                        <Grid x:Name="G10" Grid.Column="2" Margin="0">
+                            <Viewbox Margin="-5,0,0,0">
+                                <Grid>
+                                    <ed:Arc ArcThickness="10" ArcThicknessUnit="Pixel" EndAngle="360" Fill="#dbdcdc" HorizontalAlignment="Center" Height="180" Stretch="None" Stroke="Black" StartAngle="0" VerticalAlignment="Center" Width="180"/>
+                                    <ed:Arc x:Name="CompleteArcName"  ArcThickness="15" ArcThicknessUnit="Pixel" EndAngle="{Binding PercentValue}" Fill="#28559c" HorizontalAlignment="Center" Height="185"  Stretch="None" Stroke="Black" StartAngle="0" VerticalAlignment="Center" Width="185" DataContext="{Binding models}"/>
+                                    <TextBlock HorizontalAlignment="Center" Margin="0,-90,0,0" TextWrapping="Wrap" TextAlignment="Center" FontSize="18" Foreground="White" VerticalAlignment="Center" ><Run Language="zh-tw" Text="{StaticResource _G10_1}" FontFamily="Gen Jyuu Gothic"/></TextBlock>
+                                    <TextBlock x:Name="CompleteValueName" HorizontalAlignment="Center" Margin="0,-30,0,0" TextWrapping="Wrap" Text="{Binding CompleteValue,FallbackValue=--}" VerticalAlignment="Center" FontSize="25" Foreground="White" DataContext="{Binding models}"/>
+                                    <TextBlock HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"><Run Language="zh-tw" Text="{StaticResource _G10_2}" FontFamily="Gen Jyuu Gothic" FontSize="18" Foreground="White"/></TextBlock>
+                                    <Label x:Name="RemainTime" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,90,0,0" Content="{Binding TimeValue,FallbackValue=--:--:--}" ContentStringFormat="{}{0:d\:hh\:mm}" Foreground="White" FontSize="18" DataContext="{Binding models}"/>
+                                    <TextBlock HorizontalAlignment="Center" Margin="70,-30,0,0" TextWrapping="Wrap" Text="%" VerticalAlignment="Center" Foreground="White"/>
+                                </Grid>
+                            </Viewbox>
+                        </Grid>
+
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.8*"/>
+                            <ColumnDefinition Width="0.6*"/>
+                            <ColumnDefinition Width="0.8*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Orientation="Vertical" Style="{StaticResource stack1}">
+                            <TextBlock x:Name="G11" Text="{StaticResource _G11}" Style="{StaticResource Axis}" Foreground="White"/>
+                            <TextBlock x:Name="G17" Text="{StaticResource _G17}" Style="{StaticResource Axis}" Foreground="White"/>
+                            <TextBlock x:Name="G23" Text="{StaticResource _G23}" Style="{StaticResource Axis}" Foreground="White"/>
+                            <TextBlock x:Name="G27" Text="{StaticResource _G27}" Style="{StaticResource Axis}" Foreground="White"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="4" Orientation="Vertical" Style="{StaticResource stack1}" HorizontalAlignment="Right">
+                            <TextBlock x:Name="G12" Text="{Binding EncoderX}" Style="{StaticResource Axis}" Foreground="Gray" DataContext="{Binding axisStatusVM}"/>
+                            <TextBlock x:Name="G18" Text="{Binding EncoderZ}" Style="{StaticResource Axis}" Foreground="Gray" DataContext="{Binding axisStatusVM}"/>
+                            <TextBlock x:Name="G24" Text="{Binding EncoderU1}" Style="{StaticResource Axis}" Foreground="Gray" DataContext="{Binding axisStatusVM}"/>
+                            <TextBlock x:Name="G28" Text="{Binding EncoderU2}" Style="{StaticResource Axis}" Foreground="Gray" DataContext="{Binding axisStatusVM}"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="4" Orientation="Vertical" Style="{StaticResource stack1}" HorizontalAlignment="Center">
+                            <TextBlock x:Name="G13" Text="{StaticResource _G13}" Style="{StaticResource Axis}" Foreground="Gray"/>
+                            <TextBlock x:Name="G19" Text="{StaticResource _G19}" Style="{StaticResource Axis}" Foreground="Gray"/>
+                            <TextBlock x:Name="G25" Text="{StaticResource _G25}" Style="{StaticResource Axis}" Foreground="Gray"/>
+                            <TextBlock x:Name="G29" Text="{StaticResource _G29}" Style="{StaticResource Axis}" Foreground="Gray"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Orientation="Vertical" Style="{StaticResource stack2}">
+                            <TextBlock x:Name="G14" Text="{Binding LimitX}" Style="{StaticResource G15}" Foreground="Gray" DataContext="{Binding axisStatusVM}"/>
+                            <TextBlock x:Name="G20" Text="{Binding LimitZ}" Style="{StaticResource G15}" Foreground="Gray" DataContext="{Binding axisStatusVM}"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="2" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="3" Orientation="Vertical" Style="{StaticResource stack3}">
+                            <TextBlock x:Name="G26" Text="{Binding StateU1}" Style="{StaticResource G15}" Foreground="Gray" DataContext="{Binding axisStatusVM}"/>
+                            <TextBlock x:Name="G30" Text="{Binding StateU2}" Style="{StaticResource G15}" Foreground="Gray" DataContext="{Binding axisStatusVM}"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="2" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="3" Orientation="Vertical" Style="{StaticResource stack3}">
+                            <TextBlock x:Name="G61" Text="{Binding LimitU1}" Style="{StaticResource G15}" Foreground="Gray" DataContext="{Binding axisStatusVM}"/>
+                            <TextBlock x:Name="G62" Text="{Binding LimitU2}" Style="{StaticResource G15}" Foreground="Gray" DataContext="{Binding axisStatusVM}"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="4" Grid.RowSpan="2" Orientation="Vertical" Style="{StaticResource stack2}">
+                            <TextBlock x:Name="G15" Text="{Binding INPX}" Style="{StaticResource G15}" DataContext="{Binding axisStatusVM}"/>
+                            <TextBlock x:Name="G21" Text="{Binding INPZ}" Style="{StaticResource G15}" DataContext="{Binding axisStatusVM}"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="5" Grid.RowSpan="2" Orientation="Vertical" Style="{StaticResource stack2}">
+                            <TextBlock x:Name="G16" Text="{Binding AlarmX}" Style="{StaticResource G15}" DataContext="{Binding axisStatusVM}"/>
+                            <TextBlock x:Name="G22" Text="{Binding AlarmX}" Style="{StaticResource G15}" DataContext="{Binding axisStatusVM}"/>
+                        </StackPanel>
+
+                    </Grid>
+                    <Grid Grid.Row="6">
+
+                        <Grid Grid.Row="1" Grid.Column="1" Background="Black">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="0.8*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Name="G35" Grid.Row="1" Grid.Column="0" Text="{StaticResource _G35}" HorizontalAlignment="Left" Style="{StaticResource Chamber}"/>
+                            <TextBlock x:Name="G36" Grid.Row="1" Grid.Column="1" DataContext="{Binding Data_ProgressBarStraight}" Text="{Binding NowValue ,FallbackValue=--}" HorizontalAlignment="Left"  Style="{StaticResource Chamber}"/>
+                            <TextBlock x:Name="G37" Grid.Row="1" Grid.Column="2" Text="{StaticResource _G37}" HorizontalAlignment="Left"  Style="{StaticResource Chamber}"/>
+                            <ProgressBar x:Name="G38" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"  DataContext="{Binding Data_ProgressBarStraight}" Style="{StaticResource Style_StrightProgressBar}" Value="{Binding NowValue}" VerticalAlignment="Top"/>
+
+                            <TextBlock x:Name="G39" Grid.Row="3" Grid.Column="0" Text="{StaticResource _G39}" HorizontalAlignment="Left" Style="{StaticResource Chamber}"/>
+                            <TextBlock x:Name="G40" Grid.Row="3" Grid.Column="1" DataContext="{Binding Data_ProgressBarStraight2}" Text="{Binding NowValue ,FallbackValue=--}" HorizontalAlignment="Left"  Style="{StaticResource Chamber}"/>
+                            <TextBlock x:Name="G41" Grid.Row="3" Grid.Column="2" Text="%" HorizontalAlignment="Left"  Style="{StaticResource Chamber}"/>
+                            <ProgressBar x:Name="G42" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" DataContext="{Binding Data_ProgressBarStraight2}" Style="{StaticResource Style_StrightProgressBar}" Value="{Binding NowValue}" VerticalAlignment="Top"/>
+
+                            <TextBlock x:Name="G55" Grid.Row="5" Grid.Column="0" Text="{StaticResource _G55}" HorizontalAlignment="Left" Style="{StaticResource Chamber}"/>
+                            <TextBlock x:Name="G56" Grid.Row="5" Grid.Column="1" Text="500" HorizontalAlignment="Left"  Style="{StaticResource Chamber}"/>
+                            <TextBlock x:Name="G57" Grid.Row="5" Grid.Column="2" Text="{StaticResource _G57}" HorizontalAlignment="Left"  Style="{StaticResource Chamber}"/>
+                            <ProgressBar x:Name="G58" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" DataContext="{Binding Data_ProgressBarStraight3}" Style="{StaticResource Style_StrightProgressBar}" Value="{Binding NowValue}" VerticalAlignment="Top"/>
+
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Row="7">
+                        <TextBlock x:Name="G59" Text="{StaticResource _G59}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Style="{StaticResource Chamber}"/>
+                    </Grid>
+
+                    <Grid Grid.Row="8">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <ListBox x:Name="listbox1" Background="Black" Foreground="White" BorderBrush="Black" Style="{DynamicResource ListBoxStyle1}" Margin="0,2,0,0"/>
+                        <Grid Grid.Row="1" Background="Black">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="Loading" Grid.Column="1" Click="Loading_Click" Style="{StaticResource G61_btn}"/>
+                            <Button Grid.Column="2" Style="{StaticResource G62_btn}"/>
+                            <Button x:Name="Delete_message" Grid.Column="3" Style="{StaticResource G63_btn}" Click="Delete_message_Click"/>
+                        </Grid>
+                    </Grid>
+                    
+                    <Grid Grid.Row="8" Visibility="Collapsed">
+                        <ScrollViewer x:Name="G60" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Style="{DynamicResource ResourceKey=styleScrollViewer}">
+                            <ScrollViewer.Content>
+                                <TextBlock TextWrapping="Wrap" Text="氮氣壓力異常，請確認氮氣源狀況氮氣壓力異常" 
+                                           Style="{StaticResource Error_box}"/>
+
+                            </ScrollViewer.Content>
+                        </ScrollViewer>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,111 @@
+﻿<Page
+      x:Class="HMI_PermanentForm.A5_1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HMI_PermanentForm"
+      xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="100"
+      Title="A5_1" Loaded="Page_Loaded">
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*"/>
+            <RowDefinition Height="0.9*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Grid.Row="1" Background="#2c2c29">
+                <TextBlock Text="{StaticResource _A5_1_01}" Style="{StaticResource A5_1_ItemStyle}" TextAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Column="1" Grid.Row="2">
+                <Image Name="A5_1_02_Img" Source="{Binding Path=IsAxisCheckImgSrc, FallbackValue=../Img/A4_1_2_normal.png}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="{StaticResource _A5_1_02}" Foreground="#c5cbd4" FontFamily="Gen Jyuu Gothic" FontSize="13" HorizontalAlignment="Center" Padding="45"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="3">
+                <Image Name="A5_1_03_Img" Source="{Binding Path=IsPowderSupplyCheckImgSrc, FallbackValue=../Img/A4_1_3_normal.png}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="{StaticResource _A5_1_03}" Foreground="#c5cbd4" FontFamily="Gen Jyuu Gothic" FontSize="13" HorizontalAlignment="Center" Padding="45"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="4">
+                <Image Name="A5_1_04_Img" Source="{Binding Path=IsHeaterCheckImgSrc, FallbackValue=../Img/A4_1_4_warning.png}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="{StaticResource _A5_1_04}" Foreground="#c5cbd4" FontFamily="Gen Jyuu Gothic" FontSize="13" HorizontalAlignment="Center" Padding="45"/>                
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="10">
+            <Viewbox>
+                <Grid>
+                    <Grid>
+                        <Button x:Name="A5_1_05_b" FontSize="22" Foreground="White" FontFamily="Gen Jyuu Gothic Bold" Height="240" Margin="0" Style="{DynamicResource Sector_1}" Width="240" Click="A5_1_05_b_Click"/>
+                        <Button x:Name="A5_1_05_c" FontSize="22" Foreground="White" FontFamily="Gen Jyuu Gothic Bold" Height="240" Margin="5" Style="{DynamicResource Sector_2}" Width="240" Click="A5_1_05_c_Click"/>
+                        <Button x:Name="A5_1_05_d" FontSize="22" Foreground="White" FontFamily="Gen Jyuu Gothic Bold" Height="240" Margin="5" Style="{DynamicResource Sector_3}" Width="240" Click="A5_1_05_d_Click"/>
+                        <Grid.RenderTransform>
+                            <RotateTransform x:Name="noFreeze" CenterX="125" CenterY="125"/>
+                        </Grid.RenderTransform>
+                        <Grid.Triggers>
+                            <!--路由事件-->
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                            Storyboard.TargetProperty="RenderTransform.Angle"
+                            To="{Binding Num}" Duration="0:0:1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Grid.Triggers>
+                    </Grid>
+
+                    <ed:Arc x:Name="Outer_Ring_box" ArcThicknessUnit="Pixel" EndAngle="360" Stroke="Gray"  Margin="0" Stretch="None" StartAngle="0" StrokeThickness="3" Width="250" Height="250"/>
+                    <Rectangle Name="box1" Fill="Transparent" Height="20"  HorizontalAlignment="Left" Stroke="Gray" Margin="123,-20,0,0" VerticalAlignment="Top" d:LayoutOverrides="Height" StrokeThickness="3"/>
+                    <ed:Arc x:Name="Top_Ring_box" ArcThicknessUnit="Pixel" EndAngle="360" Stroke="Gray"  Margin="0,-410,0,0" Stretch="None" StartAngle="0" StrokeThickness="3" Width="120" Height="120"/>
+                    <Rectangle Name="box2" Fill="Transparent" Height="20"  HorizontalAlignment="Left" Stroke="Gray" Margin="123,0,0,-270" d:LayoutOverrides="Height" StrokeThickness="3"/>
+                    <ed:Arc x:Name="Buttom_Ring_box" ArcThicknessUnit="Pixel" EndAngle="360" Stroke="Gray"  Margin="0,0,0,-410" Stretch="None" StartAngle="0" StrokeThickness="3" Width="120" Height="120"/>
+                    
+                    <Button x:Name="Reload_btn" FontSize="22" Foreground="White" FontFamily="Gen Jyuu Gothic Bold" Height="110" Width="110" Margin="0,-410,0,0" Style="{DynamicResource Top_Ring_btn}" Click="Reload_btn_Click"/>
+                    <Button x:Name="Feed_btn" FontSize="22" FontFamily="Gen Jyuu Gothic Bold" Foreground="White" Height="110" Width="110" Margin="0,0,0,-410" Style="{DynamicResource Buttom_Ring_btn}" Click="Feed_btn_Click"/>
+                </Grid>
+            </Viewbox>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="0.2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="1" Background="#2c2c29">
+                <TextBlock x:Name="A5_1_06" Text="{StaticResource _A5_1_06}" Style="{StaticResource A5_1_ItemStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            
+            <RadioButton x:Name="A5_1_07" Content="{StaticResource _A5_1_07}" Foreground="White" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource A4_1_10_radiobtn}"/>
+            <RadioButton x:Name="A5_1_08" Content="{StaticResource _A5_1_08}" Foreground="White" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource A4_1_11_radiobtn}"/>
+            <RadioButton x:Name="A5_1_09" Content="{StaticResource _A5_1_09}" Foreground="White" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource A4_1_12_radiobtn}"/>
+        </Grid>
+
+    </Grid>
+</Page>

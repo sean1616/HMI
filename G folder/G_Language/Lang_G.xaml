@@ -1,0 +1,168 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- 中文介面 -->
+
+    <!-- G 區 中文介面 -->
+    <sys:String x:Key="_G01">
+        系 統 設 定 確 認
+    </sys:String>
+    
+    <sys:String x:Key="_G02">
+        製 程 狀 態 確 認
+    </sys:String>
+
+    <sys:String x:Key="_G03">
+        目前層數
+    </sys:String>
+
+    <sys:String x:Key="_G05">
+        所有層數
+    </sys:String>
+
+    <sys:String x:Key="_G07">
+        完成時間
+    </sys:String>
+
+    <sys:String x:Key="_G10_1">
+        完成度
+    </sys:String>
+
+    <sys:String x:Key="_G10_2">
+        剩餘時間
+    </sys:String>
+
+    <sys:String x:Key="_G11">
+        X軸
+    </sys:String>
+
+    <sys:String x:Key="_G13">
+        mm
+    </sys:String>
+    
+    <sys:String x:Key="_G14">
+        原點
+    </sys:String>
+
+    <sys:String x:Key="_G15">
+        BDY
+    </sys:String>
+
+    <sys:String x:Key="_G16">
+        INP
+    </sys:String>
+
+    <sys:String x:Key="_G17">
+        Z軸
+    </sys:String>
+
+    <sys:String x:Key="_G19">
+        mm
+    </sys:String>
+
+    <sys:String x:Key="_G20">
+        原點
+    </sys:String>
+
+    <sys:String x:Key="_G21">
+        BDY
+    </sys:String>
+
+    <sys:String x:Key="_G22">
+        INP
+    </sys:String>
+
+    <sys:String x:Key="_G23">
+        L軸
+    </sys:String>
+    
+    <sys:String x:Key="_G61">
+        原點
+    </sys:String>
+
+    <sys:String x:Key="_G25">
+        mm
+    </sys:String>
+
+    <sys:String x:Key="_G26">
+        READY
+    </sys:String>
+
+    <sys:String x:Key="_G27">
+        R軸
+    </sys:String>
+
+    <sys:String x:Key="_G62">
+        原點
+    </sys:String>
+
+    <sys:String x:Key="_G29">
+        mm
+    </sys:String>
+
+    <sys:String x:Key="_G30">
+        READY
+    </sys:String>
+
+    <sys:String x:Key="_G31">
+        腔體壓力
+    </sys:String>
+
+    <sys:String x:Key="_G33">
+        torr
+    </sys:String>
+
+    <sys:String x:Key="_G35">
+        腔體溫度
+    </sys:String>
+
+    <sys:String x:Key="_G37">
+        ℃
+    </sys:String>
+
+    <sys:String x:Key="_G39">
+        腔體濕度
+    </sys:String>
+
+    <sys:String x:Key="_G41">
+        RH
+    </sys:String>
+
+    <sys:String x:Key="_G43">
+        氮氣壓力
+    </sys:String>
+
+    <!--<sys:String x:Key="_G45">
+        kg/cm
+    </sys:String>-->
+
+    <sys:String x:Key="_G47">
+        氣旋流量
+    </sys:String>
+
+    <sys:String x:Key="_G49">
+        m/s
+    </sys:String>
+
+    <sys:String x:Key="_G51">
+        氧氣含量
+    </sys:String>
+
+    <sys:String x:Key="_G53">
+        ppm
+    </sys:String>
+
+    <sys:String x:Key="_G55">
+        雷射狀態
+    </sys:String>
+
+    <sys:String x:Key="_G57">
+        W
+    </sys:String>
+
+    <sys:String x:Key="_G59">
+        錯誤訊息
+    </sys:String>
+
+</ResourceDictionary>

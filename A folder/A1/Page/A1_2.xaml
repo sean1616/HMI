@@ -1,0 +1,242 @@
+﻿<Page x:Class="HMI_PermanentForm.A1_2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HMI_PermanentForm"
+      xmlns:h="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="A2_2">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12.7*"/>
+            <RowDefinition/>
+            <RowDefinition Height="1.6*"/>
+            <RowDefinition/>
+            <RowDefinition Height="11.5*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3.75*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--<h:HelixViewport3D x:Name="view1" Grid.RowSpan="2" MouseDown="view1_MouseDown" MouseMove="view1_MouseMove" IsRotationEnabled="True" ModelUpDirection="0,0,1" Loaded="view1_Loaded" Background="Black" ShowViewCube="True"  ShowCameraInfo="True">
+            <h:HelixViewport3D.DefaultCamera>
+                <PerspectiveCamera Position="0,-300,155" LookDirection="0,290,-155" FieldOfView="80" UpDirection="0 0 1"/>
+            </h:HelixViewport3D.DefaultCamera>
+
+            <h:SunLight/>
+
+            <h:BindableTranslateManipulator x:Name="translate_X" Direction="1 0 0" Position="0 0 0" 
+                                     Value="{Binding TranslateValue}"
+                                     TargetTransform="{Binding ElementName=blade1, Path=Transform}"/>
+
+            <h:BindableTranslateManipulator x:Name="translate_Arrow_X_R" Direction="1 0 0" Position="0 0 0" 
+                                     Value="{Binding TranslateValue}"
+                                     TargetTransform="{Binding ElementName=Arrow_R, Path=Transform}"/>
+
+            <h:BindableTranslateManipulator x:Name="translate_Arrow_X_L" Direction="1 0 0" Position="0 0 0" 
+                                     Value="{Binding TranslateValue}"
+                                     TargetTransform="{Binding ElementName=Arrow_L, Path=Transform}"/>
+
+            <h:BindableTranslateManipulator x:Name="translate_Arrow_Y_R" Direction="0 1 0" Position="0 0 0" 
+                                     Value="{Binding TranslateValue_Arrow_Y}"
+                                     TargetTransform="{Binding ElementName=Arrow_R, Path=Transform}"/>
+
+            <h:BindableTranslateManipulator x:Name="translate_Arrow_Y_L" Direction="0 1 0" Position="0 0 0" 
+                                     Value="{Binding TranslateValue_Arrow_Y}"
+                                     TargetTransform="{Binding ElementName=Arrow_L, Path=Transform}"/>
+
+            <h:BindableRotateManipulator x:Name="rotation1" Diameter="0" InnerDiameter="0" Axis="3 -4 0"
+                                  Value="{Binding RotateValue1}"  
+                                  TargetTransform="{Binding ElementName=plate1, Path=Transform}"/>
+
+            <h:BindableRotateManipulator x:Name="rotation2" Diameter="0" InnerDiameter="0" Axis="-3 -4 0"
+                                  Value="{Binding RotateValue2}"  
+                                  TargetTransform="{Binding ElementName=plate1, Path=Transform}"/>
+
+            <ModelVisual3D x:Name="plate1"/>
+            <ModelVisual3D x:Name="blade1"/>
+            <ModelVisual3D x:Name="Arrow_R"/>
+            <ModelVisual3D x:Name="Arrow_L"/>
+            <ModelVisual3D x:Name="U1"/>
+            <ModelVisual3D x:Name="U2"/>
+
+        </h:HelixViewport3D>-->
+
+        <h:HelixViewport3D x:Name="view1" Grid.RowSpan="6" Grid.ColumnSpan="5" MouseDown="view1_MouseDown" MouseMove="view1_MouseMove" IsRotationEnabled="False" ModelUpDirection="0,0,1" Loaded="view1_Loaded" Background="Black" ShowViewCube="True"  ShowCameraInfo="False">
+            <h:HelixViewport3D.DefaultCamera>
+                <PerspectiveCamera Position="0,-295,163" LookDirection="0,290,-155" FieldOfView="80" UpDirection="0 0 1"/>
+            </h:HelixViewport3D.DefaultCamera>
+
+            <h:SunLight/>
+
+            <h:BindableTranslateManipulator x:Name="translate_X" Direction="1 0 0" Position="0 0 0" 
+                                     Value="{Binding TranslateValue}"
+                                     TargetTransform="{Binding ElementName=Blade, Path=Transform}"/>
+
+            <h:BindableTranslateManipulator x:Name="translate_Arrow_X_R" Direction="1 0 0" Position="0 0 0" 
+                                     Value="{Binding TranslateValue}"
+                                     TargetTransform="{Binding ElementName=Arrow_R, Path=Transform}"/>
+
+            <h:BindableTranslateManipulator x:Name="translate_Arrow_X_L" Direction="1 0 0" Position="0 0 0" 
+                                     Value="{Binding TranslateValue}"
+                                     TargetTransform="{Binding ElementName=Arrow_L, Path=Transform}"/>
+
+            <h:BindableRotateManipulator x:Name="rotation1" Diameter="0" InnerDiameter="0" Axis="3 -4 0"
+                                  Value="{Binding RotateValue1}"  
+                                  TargetTransform="{Binding ElementName=plate1, Path=Transform}"/>
+
+            <h:BindableRotateManipulator x:Name="rotation2" Diameter="0" InnerDiameter="0" Axis="-3 -4 0"
+                                  Value="{Binding RotateValue2}"  
+                                  TargetTransform="{Binding ElementName=plate1, Path=Transform}"/>
+
+            <ModelVisual3D x:Name="Plate"/>
+
+            <ModelVisual3D x:Name="Plate_U">
+                <ModelVisual3D.Transform>
+                    <TranslateTransform3D x:Name="Plate_U_Transform" OffsetX="0" OffsetY="-75" OffsetZ="10"/>
+                </ModelVisual3D.Transform>
+            </ModelVisual3D>
+
+            <ModelVisual3D x:Name="Plate_D">
+                <ModelVisual3D.Transform>
+                    <TranslateTransform3D x:Name="Plate_D_Transform" OffsetX="0" OffsetY="-75" OffsetZ="5"/>
+                </ModelVisual3D.Transform>
+            </ModelVisual3D>
+
+            <ModelVisual3D x:Name="Blade">
+                <ModelVisual3D.Transform>
+                    <TranslateTransform3D x:Name="Blade_Transform" OffsetX="-145" OffsetY="0" OffsetZ="0"/>
+                </ModelVisual3D.Transform>
+            </ModelVisual3D>
+
+            <ModelVisual3D x:Name="Arrow_R">
+                <ModelVisual3D.Transform>
+                    <TranslateTransform3D x:Name="Arrow_R_Transform" OffsetX="-145" OffsetY="-75" OffsetZ="42"/>
+                </ModelVisual3D.Transform>
+            </ModelVisual3D>
+
+            <ModelVisual3D x:Name="Arrow_L">
+                <ModelVisual3D.Transform>
+                    <TranslateTransform3D x:Name="Arrow_L_Transform" OffsetX="-145" OffsetY="-75" OffsetZ="41"/>
+                </ModelVisual3D.Transform>
+            </ModelVisual3D>
+
+            <ModelVisual3D x:Name="Arrow_R_Jog">
+                <ModelVisual3D.Transform>
+                    <TranslateTransform3D x:Name="Arrow_R_Jog_Transform" OffsetX="0" OffsetY="-75" OffsetZ="120"/>
+                </ModelVisual3D.Transform>
+            </ModelVisual3D>
+
+            <ModelVisual3D x:Name="Arrow_L_Jog">
+                <ModelVisual3D.Transform>
+                    <TranslateTransform3D x:Name="Arrow_L_Jog_Transform" OffsetX="0" OffsetY="-75" OffsetZ="120"/>
+                </ModelVisual3D.Transform>
+            </ModelVisual3D>
+
+            <ModelVisual3D x:Name="U1"/>
+            <ModelVisual3D x:Name="U2"/>
+
+            <h:HelixViewport3D.Triggers>
+                <EventTrigger RoutedEvent="h:HelixViewport3D.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation                                
+                            Storyboard.TargetName="Arrow_R_Transform"
+                            Storyboard.TargetProperty="OffsetZ"
+                            To="41"
+                            AutoReverse="True" RepeatBehavior="Forever" />
+                            <DoubleAnimation                                
+                            Storyboard.TargetName="Arrow_L_Transform"
+                            Storyboard.TargetProperty="OffsetZ"
+                            To="42"
+                            AutoReverse="True" RepeatBehavior="Forever" />
+                            <DoubleAnimation                                
+                            Storyboard.TargetName="Plate_U_Transform"
+                            Storyboard.TargetProperty="OffsetZ"
+                            To="12"
+                            AutoReverse="True" RepeatBehavior="Forever" />
+                            <DoubleAnimation                                
+                            Storyboard.TargetName="Plate_D_Transform"
+                            Storyboard.TargetProperty="OffsetZ"
+                            To="3"
+                            AutoReverse="True" RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </h:HelixViewport3D.Triggers>
+
+        </h:HelixViewport3D>
+
+        <Button x:Name="U1_up_btn" Grid.Column="1" Grid.Row="1" Height="20" HorizontalAlignment="Center" Width="30" VerticalAlignment="Center" 
+                d:LayoutOverrides="Height" Visibility="{Binding Path=U1_visibility}" Click="U1_up_btn_Click"/>
+        <Button x:Name="U1_Down_btn" Grid.Column="1" Grid.Row="3" Height="20" HorizontalAlignment="Center" Width="30" VerticalAlignment="Center" 
+                d:LayoutOverrides="Height" Visibility="{Binding Path=U1_visibility}" Click="U1_Down_btn_Click"/>
+        <Button x:Name="U2_up_btn" Grid.Column="3" Grid.Row="1" Height="20" HorizontalAlignment="Center" Width="30" VerticalAlignment="Center" 
+                d:LayoutOverrides="Height" Visibility="{Binding Path=U2_visibility}" Click="U2_up_btn_Click" />
+        <Button x:Name="U2_Down_btn" Grid.Column="3" Grid.Row="3" Height="20" HorizontalAlignment="Center" Width="30" VerticalAlignment="Center" 
+                d:LayoutOverrides="Height" Visibility="{Binding Path=U2_visibility}" Click="U2_Down_btn_Click" />
+
+        <Grid Grid.Column="0" Grid.Row="0" Background="Transparent" Visibility="{Binding Jog_visibility}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="{Binding Path=JogRegionSize, Mode=TwoWay}"/>
+                <RowDefinition Height="0.6*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="{Binding Path=JogRegionSize, Mode=TwoWay}"/>
+                <ColumnDefinition Width="0.4*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="1" Grid.Row="1" Background="#2E2D33" CornerRadius="15" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Name="Home" Grid.Column="1" Grid.Row="1" PreviewMouseDown="U1_up_MouseDown" PreviewMouseUp="U1_up_MouseUp" Style="{StaticResource Mid_btn}"/>
+                    <Button Name="U1_up" Grid.Column="0" Grid.Row="0" IsEnabled="{Binding Jog_U1_enable}" PreviewMouseDown="U1_up_MouseDown" PreviewMouseUp="U1_up_MouseUp" Style="{StaticResource U1_up_btn}"/>
+                    <Button Name="Up" Grid.Column="1" Grid.Row="0" IsEnabled="{Binding Jog_Up_down_enable}" PreviewMouseDown="Up_MouseDown" PreviewMouseUp="Up_MouseUp" Style="{StaticResource Up_arrow_btn}"/>
+                    <Button Name="U2_up" Grid.Column="2" Grid.Row="0" IsEnabled="{Binding Jog_U2_enable}" PreviewMouseDown="U2_up_MouseDown" PreviewMouseUp="U2_up_MouseUp"  Style="{StaticResource U2_up_btn}"/>
+                    <Button Name="Left" Grid.Column="0" Grid.Row="1" IsEnabled="{Binding Jog_X_enable}" PreviewMouseDown="Left_MouseDown" PreviewMouseUp="Left_MouseUp" Style="{StaticResource Left_arrow_btn}"/>
+                    <Button Name="Right" Grid.Column="2" Grid.Row="1" IsEnabled="{Binding Jog_X_enable}" PreviewMouseDown="Right_MouseDown" PreviewMouseUp="Right_MouseUp" Style="{StaticResource Right_arrow_btn}"/>
+                    <Button Name="U1_down" Grid.Column="0" Grid.Row="2" IsEnabled="{Binding Jog_U1_enable}" PreviewMouseDown="U1_down_MouseDown" PreviewMouseUp="U1_down_MouseUp"  Style="{StaticResource U1_down_btn}"/>
+                    <Button Name="Down" Grid.Column="1" Grid.Row="2" IsEnabled="{Binding Jog_Up_down_enable}" PreviewMouseDown="Down_MouseDown" PreviewMouseUp="Down_MouseUp" Style="{StaticResource Down_arrow_btn}"/>
+                    <Button Name="U2_down" Grid.Column="2" Grid.Row="2" IsEnabled="{Binding Jog_U2_enable}" PreviewMouseDown="U2_down_MouseDown" PreviewMouseUp="U2_down_MouseUp"  Style="{StaticResource U2_down_btn}"/>
+                </Grid>
+            </Border>
+
+        </Grid>
+
+        <!--<Button Height="20" Margin="400,250,0,0" HorizontalAlignment="Left" Width="30" VerticalAlignment="Top" d:LayoutOverrides="Height"/>
+        <Button Height="20" Margin="400,330,0,0" HorizontalAlignment="Left" Width="30" VerticalAlignment="Top" d:LayoutOverrides="Height"/>-->
+
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="5" Visibility="Visible">
+            <StackPanel>
+                <TextBox Text="{Binding TranslateValue}" MinWidth="70" Width="500" HorizontalAlignment="Center"/>
+                <Slider Name="translider" Minimum="0" Maximum="290" Width="500"  HorizontalAlignment="Center" Value="{Binding TranslateValue}"/>
+
+                <!--<TextBox Text="{Binding RotateValue1}" MinWidth="70" Width="500" HorizontalAlignment="Center"/>
+                <Slider Name="rotaslider1" Minimum="-10" Maximum="10" Width="500" HorizontalAlignment="Center" Value="{Binding RotateValue1}"/>
+
+                <TextBox Text="{Binding RotateValue2}" MinWidth="70" Width="500" HorizontalAlignment="Center"/>
+                <Slider Name="rotaslider2" Minimum="-10" Maximum="10" Width="500" HorizontalAlignment="Center" Value="{Binding RotateValue2}"/>-->
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Page>
